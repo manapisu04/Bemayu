@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F1CA6862918C69400B545E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6852918C69400B545E9 /* TestView.swift */; };
+		7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6882918D52500B545E9 /* MakeupView.swift */; };
+		7F4515742919D99E0055EAA5 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515732919D99E0055EAA5 /* Description.swift */; };
+		7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */; };
+		7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */; };
+		7F9BB9BE28FFC58D000E6C87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */; };
+		7F9BB9C028FFC590000E6C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BF28FFC590000E6C87 /* Assets.xcassets */; };
+		7F9BB9C328FFC590000E6C87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9BB9C228FFC590000E6C87 /* Preview Assets.xcassets */; };
+		7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9CB28FFC66A000E6C87 /* FaceScanView.swift */; };
+		7F9BB9CE28FFC6D7000E6C87 /* FaceContourLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9CD28FFC6D7000E6C87 /* FaceContourLine.swift */; };
+		7F9BB9D028FFC736000E6C87 /* EyebrowSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9CF28FFC736000E6C87 /* EyebrowSupportView.swift */; };
+		7F9BB9D328FFC773000E6C87 /* Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9D228FFC773000E6C87 /* Save.swift */; };
+		7F9BB9D528FFC7C9000E6C87 /* EyebrowMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9D428FFC7C9000E6C87 /* EyebrowMenuBar.swift */; };
+		7F9BB9D828FFC7E4000E6C87 /* EyebrowMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */; };
+		7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */; };
+		7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7F1CA6852918C69400B545E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		7F1CA6882918D52500B545E9 /* MakeupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupView.swift; sourceTree = "<group>"; };
+		7F4515732919D99E0055EAA5 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
+		7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanViewModel.swift; sourceTree = "<group>"; };
+		7F9BB9B828FFC58D000E6C87 /* Bemayu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bemayu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BemayuApp.swift; sourceTree = "<group>"; };
+		7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7F9BB9BF28FFC590000E6C87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F9BB9C228FFC590000E6C87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7F9BB9CB28FFC66A000E6C87 /* FaceScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanView.swift; sourceTree = "<group>"; };
+		7F9BB9CD28FFC6D7000E6C87 /* FaceContourLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceContourLine.swift; sourceTree = "<group>"; };
+		7F9BB9CF28FFC736000E6C87 /* EyebrowSupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyebrowSupportView.swift; sourceTree = "<group>"; };
+		7F9BB9D228FFC773000E6C87 /* Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save.swift; sourceTree = "<group>"; };
+		7F9BB9D428FFC7C9000E6C87 /* EyebrowMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyebrowMenuBar.swift; sourceTree = "<group>"; };
+		7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyebrowMenuButton.swift; sourceTree = "<group>"; };
+		7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuBar.swift; sourceTree = "<group>"; };
+		7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F9BB9B528FFC58D000E6C87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F1CA6872918D50B00B545E9 /* Makeup */ = {
+			isa = PBXGroup;
+			children = (
+				7F1CA6882918D52500B545E9 /* MakeupView.swift */,
+			);
+			path = Makeup;
+			sourceTree = "<group>";
+		};
+		7F9BB9AF28FFC58D000E6C87 = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9BA28FFC58D000E6C87 /* Bemayu */,
+				7F9BB9B928FFC58D000E6C87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F9BB9B928FFC58D000E6C87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9B828FFC58D000E6C87 /* Bemayu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F9BB9BA28FFC58D000E6C87 /* Bemayu */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */,
+				7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */,
+				7F1CA6852918C69400B545E9 /* TestView.swift */,
+				7F1CA6872918D50B00B545E9 /* Makeup */,
+				7F9BB9CA28FFC5FB000E6C87 /* FaceScan */,
+				7F9BB9C928FFC5E9000E6C87 /* AR */,
+				7F9BB9D128FFC75E000E6C87 /* Model */,
+				7F9BB9BF28FFC590000E6C87 /* Assets.xcassets */,
+				7F9BB9C128FFC590000E6C87 /* Preview Content */,
+			);
+			path = Bemayu;
+			sourceTree = "<group>";
+		};
+		7F9BB9C128FFC590000E6C87 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9C228FFC590000E6C87 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7F9BB9C928FFC5E9000E6C87 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9CF28FFC736000E6C87 /* EyebrowSupportView.swift */,
+				7F9BB9D628FFC7CD000E6C87 /* Menu */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		7F9BB9CA28FFC5FB000E6C87 /* FaceScan */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9CB28FFC66A000E6C87 /* FaceScanView.swift */,
+				7F9BB9CD28FFC6D7000E6C87 /* FaceContourLine.swift */,
+				7F4515732919D99E0055EAA5 /* Description.swift */,
+				7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */,
+			);
+			path = FaceScan;
+			sourceTree = "<group>";
+		};
+		7F9BB9D128FFC75E000E6C87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9D228FFC773000E6C87 /* Save.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F9BB9D628FFC7CD000E6C87 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */,
+				7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */,
+				7F9BB9D928FFC835000E6C87 /* Eyebrow */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		7F9BB9D928FFC835000E6C87 /* Eyebrow */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BB9D428FFC7C9000E6C87 /* EyebrowMenuBar.swift */,
+				7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */,
+			);
+			path = Eyebrow;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F9BB9B728FFC58D000E6C87 /* Bemayu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F9BB9C628FFC590000E6C87 /* Build configuration list for PBXNativeTarget "Bemayu" */;
+			buildPhases = (
+				7F9BB9B428FFC58D000E6C87 /* Sources */,
+				7F9BB9B528FFC58D000E6C87 /* Frameworks */,
+				7F9BB9B628FFC58D000E6C87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bemayu;
+			productName = Bemayu;
+			productReference = 7F9BB9B828FFC58D000E6C87 /* Bemayu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F9BB9B028FFC58D000E6C87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					7F9BB9B728FFC58D000E6C87 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 7F9BB9B328FFC58D000E6C87 /* Build configuration list for PBXProject "Bemayu" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F9BB9AF28FFC58D000E6C87;
+			productRefGroup = 7F9BB9B928FFC58D000E6C87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F9BB9B728FFC58D000E6C87 /* Bemayu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F9BB9B628FFC58D000E6C87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F9BB9C328FFC590000E6C87 /* Preview Assets.xcassets in Resources */,
+				7F9BB9C028FFC590000E6C87 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F9BB9B428FFC58D000E6C87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F9BB9D828FFC7E4000E6C87 /* EyebrowMenuButton.swift in Sources */,
+				7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */,
+				7F4515742919D99E0055EAA5 /* Description.swift in Sources */,
+				7F1CA6862918C69400B545E9 /* TestView.swift in Sources */,
+				7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */,
+				7F9BB9D328FFC773000E6C87 /* Save.swift in Sources */,
+				7F9BB9D528FFC7C9000E6C87 /* EyebrowMenuBar.swift in Sources */,
+				7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */,
+				7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */,
+				7F9BB9CE28FFC6D7000E6C87 /* FaceContourLine.swift in Sources */,
+				7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */,
+				7F9BB9D028FFC736000E6C87 /* EyebrowSupportView.swift in Sources */,
+				7F9BB9BE28FFC58D000E6C87 /* ContentView.swift in Sources */,
+				7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7F9BB9C428FFC590000E6C87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F9BB9C528FFC590000E6C87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F9BB9C728FFC590000E6C87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bemayu/Preview Content\"";
+				DEVELOPMENT_TEAM = V9N7A7622Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.cm.Bemayu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F9BB9C828FFC590000E6C87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bemayu/Preview Content\"";
+				DEVELOPMENT_TEAM = V9N7A7622Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.cm.Bemayu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F9BB9B328FFC58D000E6C87 /* Build configuration list for PBXProject "Bemayu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F9BB9C428FFC590000E6C87 /* Debug */,
+				7F9BB9C528FFC590000E6C87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F9BB9C628FFC590000E6C87 /* Build configuration list for PBXNativeTarget "Bemayu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F9BB9C728FFC590000E6C87 /* Debug */,
+				7F9BB9C828FFC590000E6C87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F9BB9B028FFC58D000E6C87 /* Project object */;
+}

@@ -12,8 +12,10 @@ import SwiftUI
 
 struct FaceScanView: View {
     @Binding var shouldScanningFace: Bool
+    @StateObject var viewModel = FaceScanViewModel()
     var body: some View {
         ZStack {
+            FaceScanCameraView(viewModel: viewModel)
             DescriptionView(shouldScanningFace: $shouldScanningFace)
             FaceContourLine()
         }

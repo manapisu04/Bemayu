@@ -16,7 +16,7 @@ struct FaceScanView: View {
     var body: some View {
         ZStack {
             FaceScanCameraView(viewModel: viewModel)
-            DescriptionView(shouldScanningFace: $shouldScanningFace)
+            DescriptionView(shouldScanningFace: $shouldScanningFace, viewModel: viewModel)
             FaceContourLine()
         }
     }

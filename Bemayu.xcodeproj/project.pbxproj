@@ -13,6 +13,7 @@
 		7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */; };
 		7F4515782919ED1C0055EAA5 /* FaceScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515772919ED1C0055EAA5 /* FaceScan.swift */; };
 		7F45157B2919F5790055EAA5 /* FaceScanCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F45157A2919F5790055EAA5 /* FaceScanCameraView.swift */; };
+		7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B092D291BADD4003FB962 /* Calculation.swift */; };
 		7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */; };
 		7F9BB9BE28FFC58D000E6C87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */; };
 		7F9BB9C028FFC590000E6C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BF28FFC590000E6C87 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanViewModel.swift; sourceTree = "<group>"; };
 		7F4515772919ED1C0055EAA5 /* FaceScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScan.swift; sourceTree = "<group>"; };
 		7F45157A2919F5790055EAA5 /* FaceScanCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanCameraView.swift; sourceTree = "<group>"; };
+		7F6B092D291BADD4003FB962 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		7F9BB9B828FFC58D000E6C87 /* Bemayu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bemayu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BemayuApp.swift; sourceTree = "<group>"; };
 		7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				7F9BB9D228FFC773000E6C87 /* Save.swift */,
+				7F6B092D291BADD4003FB962 /* Calculation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */,
 				7F9BB9CE28FFC6D7000E6C87 /* FaceContourLine.swift in Sources */,
 				7F45157B2919F5790055EAA5 /* FaceScanCameraView.swift in Sources */,
+				7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */,
 				7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */,
 				7F9BB9D028FFC736000E6C87 /* EyebrowSupportView.swift in Sources */,
 				7F9BB9BE28FFC58D000E6C87 /* ContentView.swift in Sources */,

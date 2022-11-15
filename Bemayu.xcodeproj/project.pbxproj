@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7F1CA6862918C69400B545E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6852918C69400B545E9 /* TestView.swift */; };
 		7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6882918D52500B545E9 /* MakeupView.swift */; };
+		7F25E662292338A700714677 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25E661292338A700714677 /* Test.swift */; };
+		7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3CFCD72923156E00635A9F /* FaceTracking.swift */; };
 		7F4515742919D99E0055EAA5 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515732919D99E0055EAA5 /* Description.swift */; };
 		7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */; };
 		7F4515782919ED1C0055EAA5 /* FaceScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515772919ED1C0055EAA5 /* FaceScan.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		7F1CA6852918C69400B545E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		7F1CA6882918D52500B545E9 /* MakeupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupView.swift; sourceTree = "<group>"; };
+		7F25E661292338A700714677 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		7F3CFCD72923156E00635A9F /* FaceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTracking.swift; sourceTree = "<group>"; };
 		7F4515732919D99E0055EAA5 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanViewModel.swift; sourceTree = "<group>"; };
 		7F4515772919ED1C0055EAA5 /* FaceScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScan.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				7F4515772919ED1C0055EAA5 /* FaceScan.swift */,
+				7F25E661292338A700714677 /* Test.swift */,
+				7F3CFCD72923156E00635A9F /* FaceTracking.swift */,
 				7F45157A2919F5790055EAA5 /* FaceScanCameraView.swift */,
 			);
 			path = Camera;
@@ -242,12 +248,14 @@
 				7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */,
 				7F4515742919D99E0055EAA5 /* Description.swift in Sources */,
 				7F1CA6862918C69400B545E9 /* TestView.swift in Sources */,
+				7F25E662292338A700714677 /* Test.swift in Sources */,
 				7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */,
 				7F9BB9D328FFC773000E6C87 /* Save.swift in Sources */,
 				7F4515782919ED1C0055EAA5 /* FaceScan.swift in Sources */,
 				7F9BB9D528FFC7C9000E6C87 /* EyebrowMenuBar.swift in Sources */,
 				7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */,
 				7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */,
+				7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */,
 				7F9BB9CE28FFC6D7000E6C87 /* FaceContourLine.swift in Sources */,
 				7F45157B2919F5790055EAA5 /* FaceScanCameraView.swift in Sources */,
 				7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */,

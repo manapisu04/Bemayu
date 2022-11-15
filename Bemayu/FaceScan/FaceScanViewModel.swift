@@ -6,20 +6,23 @@
 //
 
 import Foundation
-import Combine
+import ARKit
 
 class FaceScanViewModel: ObservableObject {
     let save = Save.shared
-    // 目と眉の矩形を保存しておく。
-    @Published var leftEye: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
-    @Published var rightEye: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
-    @Published var leftEyebrow: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
-    @Published var rightEyebrow: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
+    // 目と眉の矩形を保存しておく。長さももしかしたら使うかも？なので、
+    var leftEye: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
+    var rightEye: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
+    var leftEyebrow: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
+    var rightEyebrow: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
+    
+    var leftEyePosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
+    var rightEyePosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
     
     init() {
         
     }
-
+    
     /// 左目と左眉の距離
     var leftDistance: CGFloat {
         get {
@@ -55,5 +58,20 @@ class FaceScanViewModel: ObservableObject {
         print(calcu.pythagoreanTheorem(leftPoint: leftEye[3], rightPoint: leftEyebrow[3]))
         print("ヒダリ")
         print(print(calcu.pythagoreanTheorem(leftPoint: rightEye[3], rightPoint: rightEyebrow[3])))
+        print("AR")
+        let cm = distanceMeasurement(startPosition: leftEyePosition, endPosition: rightEyePosition)
+        print(cm)
     }
+    
+    // ARでの距離を、cmに変える…
+    func distanceMeasurement(startPosition: SCNVector3, endPosition: SCNVector3) -> Double {
+        print("hogehoge")
+        print(endPosition.z)
+        print(startPosition.z)
+        print("hogehoge")
+        let position = SCNVector3Make(endPosition.x - startPosition.x, endPosition.y - startPosition.y, endPosition.z - startPosition.z)
+        let distance = sqrt(position.x * position.x + position.y * position.y + position.z * position.z)
+        return Double(distance * 100.0)
+    }
+    
 }

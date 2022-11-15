@@ -1,15 +1,15 @@
 //
-//  FaceScan.swift
+//  Test.swift
 //  Bemayu
 //
-//  Created by cmStudent on 2022/11/08.
+//  Created by cmStudent on 2022/11/15.
 //
 
 import AVFoundation
 import UIKit
 import Vision
 
-class LiveFeedViewController: UIView {
+class Test: UIView {
     let captureSession = AVCaptureSession()
     lazy var previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
     let videoDataOutput = AVCaptureVideoDataOutput()
@@ -48,12 +48,6 @@ class LiveFeedViewController: UIView {
         self.previewLayer.frame = self.frame
         self.layer.addSublayer(self.previewLayer)
         
-        // FIXME: 乗っからない
-        let arView = FaceTracking(viewModel: self.viewModel!).ARView
-        arView.frame = self.frame
-        self.addSubview(arView)
-        
-        
         
         self.videoDataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value: kCVPixelFormatType_32BGRA)] as [String : Any]
 
@@ -75,7 +69,7 @@ class LiveFeedViewController: UIView {
     }
 }
 
-extension LiveFeedViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension Test: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
@@ -145,7 +139,6 @@ extension LiveFeedViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
      ランドマークを取得し、プロパティに詰め込む。
      */
     private func handleLandmark(_ eye: VNFaceLandmarkRegion2D, faceBoundingBox: CGRect, parts: Parts) {
-        let landmarkPath = CGMutablePath()
         let landmarkPathPoints = eye.normalizedPoints
             .map({ eyePoint in
                 CGPoint(
@@ -169,24 +162,6 @@ extension LiveFeedViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         case .rightEyebrow:
             viewModel.rightEyebrow = landmarkPathPoints
         }
-        
-        landmarkPath.addLines(between: landmarkPathPoints)
-        landmarkPath.closeSubpath()
-        let landmarkLayer = CAShapeLayer()
-        landmarkLayer.path = landmarkPath
-        landmarkLayer.fillColor = UIColor.clear.cgColor
-        landmarkLayer.strokeColor = UIColor.green.cgColor
-
-        self.faceLayers.append(landmarkLayer)
-        self.layer.addSublayer(landmarkLayer)
-        
 
     }
-}
-
-enum Parts {
-    case leftEye
-    case rightEye
-    case leftEyebrow
-    case rightEyebrow
 }

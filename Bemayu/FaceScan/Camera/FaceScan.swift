@@ -44,16 +44,14 @@ class LiveFeedViewController: UIView {
         // FIXME: main.bouns使いたくないな
         self.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: UIScreen.main.bounds.size)
         
-        // プレビューの大きさをレイヤーと同じにする
-        self.previewLayer.frame = self.frame
-        self.layer.addSublayer(self.previewLayer)
-        
         // FIXME: 乗っからない
         let arView = FaceTracking(viewModel: self.viewModel!).ARView
         arView.frame = self.frame
         self.addSubview(arView)
         
-        
+        // プレビューの大きさをレイヤーと同じにする
+        self.previewLayer.frame = self.frame
+        self.layer.addSublayer(self.previewLayer)
         
         self.videoDataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value: kCVPixelFormatType_32BGRA)] as [String : Any]
 

@@ -20,13 +20,10 @@ struct FaceTracking: UIViewRepresentable {
     func makeUIView(context: Context) -> ARSCNView {
         ARView.delegate = context.coordinator
         setARView()
-        
-        // FIXME: レイヤーを合体する
-//        let visionView = LiveFeedViewController()
-//        visionView.viewModel = viewModel
-//        visionView.previewLayer.frame = ARView.frame
-//        ARView.layer.addSublayer(visionView.previewLayer)
-        
+        let a = LiveFeedViewController()
+        a.viewModel = viewModel
+        a.frame = self.ARView.frame
+        ARView.addSubview(a)
         return ARView
     }
     

@@ -14,7 +14,7 @@ struct FaceScanCameraView: UIViewRepresentable {
     func makeUIView(context: Context) -> LiveFeedViewController {
         let view = LiveFeedViewController()
         view.viewModel = viewModel
-        view.setupCamera()
+//        view.setupCamera()
         view.run()
         return view
     }

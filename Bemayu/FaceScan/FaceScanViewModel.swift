@@ -44,6 +44,7 @@ class FaceScanViewModel: ObservableObject {
     }
     
     // 押すと目の距離がゲットできるぜよ！
+    // FIXME: どっちも取れていなかった場合、この関数を押せなくする。
     func tappedButton() {
         let calcu = CalculationDistance()
         print("hogehoge")

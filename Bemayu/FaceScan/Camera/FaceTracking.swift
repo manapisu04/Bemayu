@@ -20,10 +20,6 @@ struct FaceTracking: UIViewRepresentable {
     func makeUIView(context: Context) -> ARSCNView {
         ARView.delegate = context.coordinator
         setARView()
-        let a = LiveFeedViewController()
-        a.viewModel = viewModel
-        a.frame = self.ARView.frame
-        ARView.addSubview(a)
         return ARView
     }
     
@@ -63,8 +59,6 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
     var leftEyeNode = SCNReferenceNode()
     var rightEyeNode = SCNReferenceNode()
     
-    
-    
     init(_ faceTrackingAR: FaceTracking) {
         self.parent = faceTrackingAR
     }
@@ -77,7 +71,7 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
         
         // ARSCNView、ARFaceAnchorを取得
         guard let sceneView = renderer as? ARSCNView, anchor is ARFaceAnchor else {
-            print("にるにる")
+            // TODO: 現在握り潰し
             return nil
         }
         
@@ -96,12 +90,33 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
         }
         
         node.geometry?.firstMaterial?.fillMode = .lines
-        print("ほげ")
         return node
     }
     
     // ここは顔が認知されるとずっと更新される
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        
+        let faceDetectionRequest = VNDetectFaceLandmarksRequest(completionHandler: { (request: VNRequest, error: Error?) in
+                
+
+                if let observations = request.results as? [VNFaceObservation] {
+                    self.handleFaceDetectionObservations(observations: observations)
+                }
+            
+        })
+        
+        guard let frame =  self.parent.ARView.session.currentFrame else {
+            // TODO: 現在握り潰し。何か処理があれば。
+            return
+        }
+        
+        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: frame.capturedImage, orientation: .leftMirrored, options: [:])
+
+        do {
+            try imageRequestHandler.perform([faceDetectionRequest])
+        } catch {
+          print(error.localizedDescription)
+        }
         
         // ARFaceAnchor、ARSCNFaceGeometryを取得
         guard let faceAnchor = anchor as? ARFaceAnchor, let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
@@ -116,13 +131,9 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
                 
                 // 358が左目、1168が右目
                 if x == 358 {
-//                    DispatchQueue.main.async {
-                        self.parent.viewModel.leftEyePosition = child.position
-//                    }
+                    self.parent.viewModel.leftEyePosition = child.position
                 } else if x == 1168 {
-//                    DispatchQueue.main.async {
-                        self.parent.viewModel.rightEyePosition = child.position
-//                    }
+                    self.parent.viewModel.rightEyePosition = child.position
                 }
             }
             
@@ -134,6 +145,33 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
         faceGeometry.update(from: faceAnchor.geometry)
     }
     
+    // 表示する
+    private func handleFaceDetectionObservations(observations: [VNFaceObservation]) {
+        for observation in observations {
+            
+            if let landmarks = observation.landmarks {
 
+                if let leftEyebrow = landmarks.leftEyebrow {
+                    parent.viewModel.leftEyebrow = leftEyebrow.normalizedPoints
+                }
+
+                if let rightEyebrow = landmarks.rightEyebrow {
+                    parent.viewModel.rightEyebrow = rightEyebrow.normalizedPoints
+                }
+                
+                if let leftEye = landmarks.leftEye {
+                    parent.viewModel.leftEye = leftEye.normalizedPoints
+                }
+                
+                if let rightEye = landmarks.rightEye {
+                    parent.viewModel.rightEye = rightEye.normalizedPoints
+                }
+                
+                
+
+            }
+        }
+    }
+    
 }
 

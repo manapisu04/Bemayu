@@ -101,6 +101,9 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
 
                 if let observations = request.results as? [VNFaceObservation] {
                     self.handleFaceDetectionObservations(observations: observations)
+                    self.parent.viewModel.canFacialRecognize = true
+                } else {
+                    self.parent.viewModel.canFacialRecognize = false
                 }
             
         })
@@ -166,9 +169,6 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
                 if let rightEye = landmarks.rightEye {
                     parent.viewModel.rightEye = rightEye.normalizedPoints
                 }
-                
-                
-
             }
         }
     }

@@ -37,10 +37,11 @@ struct CalculationDistance {
     }
     
     /*
-     Double(cm)をSCNVector3に変換する
+     CGFloatをSCNVector3に変換する
      */
-    private func convertingToSCNVector3(double: Double) -> SCNVector3 {
-        
+    func convertingToSCNVector3(cgFloat: CGFloat, magnification: Double) -> SCNVector3 {
+        let distanceByAR = cgFloat * magnification
+        print(distanceByAR)
         
         // FIXME: 仮置き
         return SCNVector3(0, 0, 0)
@@ -55,10 +56,10 @@ struct CalculationDistance {
         return cm
     }
     
-    // TODO: ピタゴラスの定理。。。omg
-    func pythagoreanTheorem(leftPoint: CGPoint, rightPoint: CGPoint) -> Double {
-        let heightPoint = leftPoint.y > rightPoint.y ? leftPoint : rightPoint
-        let rowPoint = heightPoint == leftPoint ? rightPoint : leftPoint
+    // ピタゴラスの定理。。。omg
+    func pythagoreanTheorem(startPoint: CGPoint, endPoint: CGPoint) -> Double {
+        let heightPoint = startPoint.y > endPoint.y ? startPoint : endPoint
+        let rowPoint = heightPoint == startPoint ? endPoint : startPoint
         
         // heightPointとrowPointを使って直角を作る。直角三角形になる。
         let rightAnglePoint = CGPoint(x: heightPoint.x, y: rowPoint.y)
@@ -71,6 +72,21 @@ struct CalculationDistance {
         let sideA = sqrt((sideB * sideB) + (sideC * sideC))
         
         return Double(sideA)
+    }
+    
+    // ARでの距離をとる…
+    func distanceMeasurement(startPosition: SCNVector3, endPosition: SCNVector3) -> Double {
+        print("hogehoge")
+        print(endPosition.z)
+        print(startPosition.z)
+        print("hogehoge")
+        let position = SCNVector3Make(endPosition.x - startPosition.x, endPosition.y - startPosition.y, endPosition.z - startPosition.z)
+        let distance = sqrt(position.x * position.x + position.y * position.y + position.z * position.z)
+        print(sqrt(position.x * position.x))
+        print(sqrt(position.y * position.y))
+        print(sqrt(position.z * position.z))
+        
+        return Double(distance)
     }
 }
 

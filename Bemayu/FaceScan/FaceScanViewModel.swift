@@ -19,6 +19,10 @@ class FaceScanViewModel: ObservableObject {
     var leftEyePosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
     var rightEyePosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
     
+    // フラグ
+    var canFacialRecognize = false
+    @Published var showAlert = false
+    
     init() {
         
     }
@@ -43,36 +47,33 @@ class FaceScanViewModel: ObservableObject {
         // うまく保存できなかったら処理とか
     }
     
-    // 押すと目の距離がゲットできるぜよ！
-    // FIXME: どっちも取れていなかった場合、この関数を押せなくする。
+    /*
+     顔認識できている場合のみ、眉位置を保存する。
+     */
     func tappedButton() {
+        if !canFacialRecognize {
+            showAlert = false
+            return
+        }
+        
         let calcu = CalculationDistance()
-        print("hogehoge")
-        print(leftEye[3].x)
-        print(leftEye[3].y)
-        print("fugafuga")
-        print(rightEye[3].x)
-        print(rightEye[3].y)
-        print("目の距離ぃ")
-        print(calcu.pythagoreanTheorem(leftPoint: leftEye[3], rightPoint: rightEye[3]))
-        print("目と眉の距離右")
-        print(calcu.pythagoreanTheorem(leftPoint: leftEye[3], rightPoint: leftEyebrow[3]))
-        print("ヒダリ")
-        print(print(calcu.pythagoreanTheorem(leftPoint: rightEye[3], rightPoint: rightEyebrow[3])))
-        print("AR")
-        let cm = distanceMeasurement(startPosition: leftEyePosition, endPosition: rightEyePosition)
-        print(cm)
-    }
-    
-    // ARでの距離を、cmに変える…
-    func distanceMeasurement(startPosition: SCNVector3, endPosition: SCNVector3) -> Double {
-        print("hogehoge")
-        print(endPosition.z)
-        print(startPosition.z)
-        print("hogehoge")
-        let position = SCNVector3Make(endPosition.x - startPosition.x, endPosition.y - startPosition.y, endPosition.z - startPosition.z)
-        let distance = sqrt(position.x * position.x + position.y * position.y + position.z * position.z)
-        return Double(distance * 100.0)
+        
+        // ARでの両目の距離
+        let eyesDistanceByAR = calcu.distanceMeasurement(startPosition: leftEyePosition, endPosition: rightEyePosition)
+        
+        let leftDistance = calcu.pythagoreanTheorem(startPoint: leftEye[3], endPoint: leftEyebrow[3])
+        let rightDistance = calcu.pythagoreanTheorem(startPoint: rightEye[3], endPoint: rightEyebrow[3])
+        
+        // Visionでの両目の距離
+        let eyesDistanceByVision = calcu.pythagoreanTheorem(startPoint: leftEye[3], endPoint: rightEye[3])
+        
+        let magnification = eyesDistanceByAR.multiplierFor(eyesDistanceByVision)
+        
+        print(calcu.convertingToSCNVector3(cgFloat: leftDistance, magnification: magnification))
+        print(calcu.convertingToSCNVector3(cgFloat: rightDistance, magnification: magnification))
+        
+        // trueになるので、アラート表示などの処理を
+        showAlert = true
     }
     
 }

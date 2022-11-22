@@ -13,6 +13,7 @@
 		7F4515742919D99E0055EAA5 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515732919D99E0055EAA5 /* Description.swift */; };
 		7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */; };
 		7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B092D291BADD4003FB962 /* Calculation.swift */; };
+		7F6ED82F292C54BE00609FD4 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6ED82E292C54BE00609FD4 /* Double+.swift */; };
 		7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */; };
 		7F9BB9BE28FFC58D000E6C87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */; };
 		7F9BB9C028FFC590000E6C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BF28FFC590000E6C87 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		7F4515732919D99E0055EAA5 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanViewModel.swift; sourceTree = "<group>"; };
 		7F6B092D291BADD4003FB962 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
+		7F6ED82E292C54BE00609FD4 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		7F9BB9B828FFC58D000E6C87 /* Bemayu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bemayu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BemayuApp.swift; sourceTree = "<group>"; };
 		7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				7F9BB9D228FFC773000E6C87 /* Save.swift */,
 				7F6B092D291BADD4003FB962 /* Calculation.swift */,
+				7F6ED82E292C54BE00609FD4 /* Double+.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */,
 				7F9BB9D328FFC773000E6C87 /* Save.swift in Sources */,
 				7F9BB9D528FFC7C9000E6C87 /* EyebrowMenuBar.swift in Sources */,
+				7F6ED82F292C54BE00609FD4 /* Double+.swift in Sources */,
 				7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */,
 				7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */,
 				7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */,
@@ -376,10 +380,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bemayu/Preview Content\"";
-				DEVELOPMENT_TEAM = V9N7A7622Y;
+				DEVELOPMENT_TEAM = 6H8RBA4DXP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -395,6 +400,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.cm.Bemayu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,10 +412,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bemayu/Preview Content\"";
-				DEVELOPMENT_TEAM = V9N7A7622Y;
+				DEVELOPMENT_TEAM = 6H8RBA4DXP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -425,6 +432,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.cm.Bemayu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

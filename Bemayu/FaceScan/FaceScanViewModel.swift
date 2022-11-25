@@ -9,7 +9,7 @@ import Foundation
 import ARKit
 
 class FaceScanViewModel: ObservableObject {
-    let save = Save.shared
+    let save = FacePartsService.shared
     // 目と眉の矩形を保存しておく。長さももしかしたら使うかも？なので、
     var leftEye: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
     var rightEye: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]

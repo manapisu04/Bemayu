@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F11D48B2930538C00506B97 /* EyebrowSupportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11D48A2930538C00506B97 /* EyebrowSupportViewModel.swift */; };
 		7F1CA6862918C69400B545E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6852918C69400B545E9 /* TestView.swift */; };
 		7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6882918D52500B545E9 /* MakeupView.swift */; };
 		7F4515742919D99E0055EAA5 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515732919D99E0055EAA5 /* Description.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F11D48A2930538C00506B97 /* EyebrowSupportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyebrowSupportViewModel.swift; sourceTree = "<group>"; };
 		7F1CA6852918C69400B545E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		7F1CA6882918D52500B545E9 /* MakeupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupView.swift; sourceTree = "<group>"; };
 		7F4515732919D99E0055EAA5 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				7F9BB9CF28FFC736000E6C87 /* EyebrowSupportView.swift */,
+				7F11D48A2930538C00506B97 /* EyebrowSupportViewModel.swift */,
 				7F9BB9D628FFC7CD000E6C87 /* Menu */,
 			);
 			path = AR;
@@ -235,6 +238,7 @@
 				7F9BB9D028FFC736000E6C87 /* EyebrowSupportView.swift in Sources */,
 				7F9BB9BE28FFC58D000E6C87 /* ContentView.swift in Sources */,
 				7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */,
+				7F11D48B2930538C00506B97 /* EyebrowSupportViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bemayu/Preview Content\"";
-				DEVELOPMENT_TEAM = V9N7A7622Y;
+				DEVELOPMENT_TEAM = 6H8RBA4DXP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -17,7 +17,7 @@ struct MakeupView: View {
     // ARの画面、下にボタン
     var body: some View {
         ZStack {
-            TestEyebrowView()
+            EyebrowSupportView()
             VStack {
                 Spacer()
                 MainMenuBar(shouldScanningFace: $shouldScanningFace, isShowEyebrowMenu: $isShowEyebrowMenu)

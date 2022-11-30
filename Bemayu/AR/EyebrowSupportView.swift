@@ -12,14 +12,22 @@ import ARKit
 struct EyebrowSupportView: UIViewRepresentable {
     typealias UIViewType = ARSCNView
     
-    var ARView = ARSCNView()
+    var arView: ARSCNView
     
-    private var faceNode = SCNNode()
+    private var faceNode: SCNNode
+    
+    @ObservedObject var viewModel: EyebrowSupportViewModel
+    
+    init(viewModel: EyebrowSupportViewModel) {
+        self.viewModel = viewModel
+        self.arView = ARSCNView()
+        self.faceNode = SCNNode()
+    }
     
     func makeUIView(context: Context) -> ARSCNView {
-        ARView.delegate = context.coordinator
+        arView.delegate = context.coordinator
         setARView()
-        return ARView
+        return arView
     }
     
     func updateUIView(_ uiView: ARSCNView, context: Context) {
@@ -32,13 +40,13 @@ struct EyebrowSupportView: UIViewRepresentable {
     
     private func setARView() {
         
-        ARView.session = ARSession()
-        ARView.scene = SCNScene()
+        arView.session = ARSession()
+        arView.scene = SCNScene()
         
         if let geometry = faceNode.geometry {
             let node = SCNNode(geometry: geometry)
             geometry.firstMaterial?.diffuse.contents = UIColor.blue
-            ARView.scene.rootNode.addChildNode(node)
+            arView.scene.rootNode.addChildNode(node)
             
         }
     }
@@ -47,7 +55,7 @@ struct EyebrowSupportView: UIViewRepresentable {
         let configuration = ARFaceTrackingConfiguration()
         configuration.maximumNumberOfTrackedFaces = 1
         
-        ARView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        arView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
 }
@@ -80,11 +88,10 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
         let imageNode = SCNNode()
         //FIXME: 大きさ調整
         let imageGeo = SCNPlane(width: 0.02, height: 0.01)
-        imageGeo.firstMaterial?.diffuse.contents = UIImage(named: "mayuge")
+        imageGeo.firstMaterial?.diffuse.contents = UIImage(named: parent.viewModel.image.rawValue)
         imageNode.geometry = imageGeo
         imageNode.name = "image"
         imageNode.position = SCNVector3(0, 0, 0)
-        
         node.addChildNode(imageNode)
         imageNode.geometry?.firstMaterial?.fillMode = .fill
         

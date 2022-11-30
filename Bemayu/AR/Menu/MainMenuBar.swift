@@ -13,6 +13,8 @@ struct MainMenuBar: View {
     @Binding var shouldScanningFace: Bool
     // 眉の画面用
     @Binding var isShowEyebrowMenu: Bool
+    
+    @Binding var test: Bool
     var body: some View {
         GeometryReader { geometry in
             VStack {

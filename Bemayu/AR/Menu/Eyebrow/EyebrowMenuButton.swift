@@ -13,9 +13,13 @@ struct EyebrowMenuButton: View {
     let title: String
     let labelColor: Color
     
-    init(impression: Impression, title: String) {
+    @ObservedObject var viewModel: EyebrowSupportViewModel
+    @Binding var test: Bool
+    
+    init(impression: Impression, title: String, viewModel: EyebrowSupportViewModel, test: Binding<Bool>) {
         self.impression = impression
         self.title = title
+        self.viewModel = viewModel
         switch(impression) {
         case .cute:
             self.labelColor = SwiftUI.Color("cuteColor")
@@ -24,6 +28,7 @@ struct EyebrowMenuButton: View {
         case .natural:
             self.labelColor = SwiftUI.Color("naturalColor")
         }
+        self._test = test
     }
     
     var body: some View {
@@ -44,14 +49,21 @@ struct EyebrowMenuButton: View {
         }
         .background(Color.white)
         .cornerRadius(4.0)
+        .gesture(
+            TapGesture()
+                .onEnded { _ in
+                    viewModel.changeImage(name: EyebrowsType.test2)
+                    test.toggle()
+                }
+        )
     }
 }
 
-struct EyebrowMenuButton_Previews: PreviewProvider {
-    static var previews: some View {
-        EyebrowMenuButton(impression: .cute, title: "cute_h")
-    }
-}
+//struct EyebrowMenuButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EyebrowMenuButton(impression: .cute, title: "cute_h")
+//    }
+//}
 
 enum Impression {
     case cute

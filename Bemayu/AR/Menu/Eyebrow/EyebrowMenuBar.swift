@@ -11,7 +11,6 @@ import SwiftUI
 struct EyebrowMenuBar: View {
     @Binding var isShowEyebrowMenu: Bool
     @StateObject var viewModel: EyebrowSupportViewModel
-    @Binding var test: Bool
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -41,9 +40,8 @@ struct EyebrowMenuBar: View {
                         
                         // 眉毛ボタン
                         HStack {
-                            ForEach(1..<5) { _ in
-                                EyebrowMenuButton(impression: .cute, title: "cute_h", viewModel: viewModel, test: $test)
-                            }
+                            EyebrowMenuButton(impression: .cute, title: "mayuge2", viewModel: viewModel)
+                            EyebrowMenuButton(impression: .cool, title: "cat", viewModel: viewModel)
                         }
                     }
                 }

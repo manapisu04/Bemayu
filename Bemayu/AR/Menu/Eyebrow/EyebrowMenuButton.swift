@@ -14,9 +14,8 @@ struct EyebrowMenuButton: View {
     let labelColor: Color
     
     @ObservedObject var viewModel: EyebrowSupportViewModel
-    @Binding var test: Bool
     
-    init(impression: Impression, title: String, viewModel: EyebrowSupportViewModel, test: Binding<Bool>) {
+    init(impression: Impression, title: String, viewModel: EyebrowSupportViewModel) {
         self.impression = impression
         self.title = title
         self.viewModel = viewModel
@@ -28,7 +27,6 @@ struct EyebrowMenuButton: View {
         case .natural:
             self.labelColor = SwiftUI.Color("naturalColor")
         }
-        self._test = test
     }
     
     var body: some View {
@@ -52,8 +50,8 @@ struct EyebrowMenuButton: View {
         .gesture(
             TapGesture()
                 .onEnded { _ in
-                    viewModel.changeImage(name: EyebrowsType.test2)
-                    test.toggle()
+                    viewModel.changeImage(name: title)
+                    viewModel.tappedImage = true
                 }
         )
     }

@@ -9,69 +9,215 @@
 import SwiftUI
 import ARKit
 
-struct EyebrowSupportView: UIViewRepresentable {
-    typealias UIViewType = ARSCNView
+//struct EyebrowSupportView: UIViewRepresentable {
+//    typealias UIViewType = ARSCNView
+//
+//    var arView: ARSCNView
+//
+//    private var faceNode: SCNNode
+//
+//    @ObservedObject var viewModel: EyebrowSupportViewModel
+//
+//    init(viewModel: EyebrowSupportViewModel) {
+//        self.viewModel = viewModel
+//        self.arView = ARSCNView()
+//        self.faceNode = SCNNode()
+//    }
+//
+//    func makeUIView(context: Context) -> ARSCNView {
+//        arView.delegate = context.coordinator
+//        setARView()
+//        return arView
+//    }
+//
+//    func updateUIView(_ uiView: ARSCNView, context: Context) {
+//        run()
+//    }
+//
+//    func makeCoordinator() -> Coordinator {
+//        return Coordinator(self)
+//    }
+//
+//    private func setARView() {
+//        arView.session = ARSession()
+//        arView.scene = SCNScene()
+//
+//        if let geometry = faceNode.geometry {
+//            let node = SCNNode(geometry: geometry)
+//            geometry.firstMaterial?.diffuse.contents = UIColor.blue
+//            arView.scene.rootNode.addChildNode(node)
+//
+//        }
+//    }
+//
+//    private func run() {
+//        let configuration = ARFaceTrackingConfiguration()
+//        configuration.maximumNumberOfTrackedFaces = 1
+//
+//        arView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+//    }
+//
+//}
+//
+//final class Coordinator: NSObject, ARSCNViewDelegate {
+//    let parent: EyebrowSupportView
+//
+//    var leftEyeNode = SCNReferenceNode()
+//    var rightEyeNode = SCNReferenceNode()
+//
+//    init(_ sampleAR: EyebrowSupportView) {
+//        self.parent = sampleAR
+//    }
+//
+//    // 新しく追加されたアンカーに対応する SceneKit ノードを提供するようにデリゲートに依頼
+//    // ここで形やARで何出すか？を作ってる。オブジェクトを生成してる。
+//    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+//
+//        // ARSCNView、ARFaceAnchorを取得
+//        guard let sceneView = renderer as? ARSCNView, anchor is ARFaceAnchor else {
+//            return nil
+//        }
+//
+//        // フェイスジオメトリを持つノードを新規生成
+//        let faceGeometry = ARSCNFaceGeometry(device: sceneView.device!, fillMesh: true)
+//        let node = SCNNode(geometry: faceGeometry)
+//        node.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
+//
+//        // 眉毛の画像を表示させたい
+//        let imageNode = SCNNode()
+//        //FIXME: 大きさ調整
+//        let imageGeo = SCNPlane(width: 0.02, height: 0.01)
+//        imageGeo.firstMaterial?.diffuse.contents = UIImage(named: EyebrowsType.test.rawValue)
+//        imageNode.geometry = imageGeo
+//        imageNode.name = EyebrowsType.test.rawValue
+//        imageNode.position = SCNVector3(0, 0, 0)
+//        imageNode.opacity = 0.0
+//        node.addChildNode(imageNode)
+//        imageNode.geometry?.firstMaterial?.fillMode = .fill
+//
+//        // 眉毛の画像を表示させたい
+//        let imageNode2 = SCNNode()
+//        //FIXME: 大きさ調整
+//        let imageGeo2 = SCNPlane(width: 0.02, height: 0.01)
+//        imageGeo2.firstMaterial?.diffuse.contents = UIImage(named: EyebrowsType.test2.rawValue)
+//        imageNode2.geometry = imageGeo2
+//        imageNode2.name = EyebrowsType.test2.rawValue
+//        imageNode2.position = SCNVector3(0, 0, 0)
+//        imageNode2.opacity = 0.0
+//        node.addChildNode(imageNode2)
+//        imageNode2.geometry?.firstMaterial?.fillMode = .fill
+//
+//        node.geometry?.firstMaterial?.fillMode = .lines
+//        return node
+//    }
+//
+//    // ここは顔が認知されるとずっと更新される
+//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//
+//        // ARFaceAnchor、ARSCNFaceGeometryを取得
+//        guard let faceAnchor = anchor as? ARFaceAnchor, let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
+//            return
+//        }
+//        print("==============================")
+//        if parent.viewModel.oldImage == EyebrowsType.test2 {
+//            print("piypyp")
+//
+//            let child = node.childNode(withName: EyebrowsType.test2.rawValue, recursively: false)
+//            if let child {
+//                //FIXME: 眉毛の位置にする
+//                child.opacity = 1.0
+//            }
+//            parent.arView.session.pause()
+//        }
+//
+//        // フェイスジオメトリを更新
+//        faceGeometry.update(from: faceAnchor.geometry)
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, willUpdate node: SCNNode, for anchor: ARAnchor) {
+//        // ARFaceAnchor、ARSCNFaceGeometryを取得
+//        guard let faceAnchor = anchor as? ARFaceAnchor, let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
+//            return
+//        }
+//        faceGeometry.update(from: faceAnchor.geometry)
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+//        print("a")
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+//        print("b")
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+//        print("c")
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, didApplyAnimationsAtTime time: TimeInterval) {
+//        print("d")
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
+//        print("e")
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
+//        print("f")
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
+//        print("g")
+//    }
+//
+//    func renderer(_ renderer: SCNSceneRenderer, didApplyConstraintsAtTime time: TimeInterval) {
+//        print("h")
+//    }
+//}
+
+
+// FIXME: あまりにおファット
+class ARViewController: UIViewController, ARSCNViewDelegate {
+    var sceneView = ARSCNView()
+    var faceNode = SCNNode()
+    var viewModel: EyebrowSupportViewModel?
     
-    var arView: ARSCNView
-    
-    private var faceNode: SCNNode
-    
-    @ObservedObject var viewModel: EyebrowSupportViewModel
-    
-    init(viewModel: EyebrowSupportViewModel) {
-        self.viewModel = viewModel
-        self.arView = ARSCNView()
-        self.faceNode = SCNNode()
-    }
-    
-    func makeUIView(context: Context) -> ARSCNView {
-        arView.delegate = context.coordinator
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        sceneView.delegate = self
         setARView()
-        return arView
+        self.view = sceneView
     }
     
-    func updateUIView(_ uiView: ARSCNView, context: Context) {
-        run()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let configuration = ARFaceTrackingConfiguration()
+        configuration.maximumNumberOfTrackedFaces = 1
+        
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        
     }
     
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        sceneView.session.pause()
     }
     
     private func setARView() {
-        
-        arView.session = ARSession()
-        arView.scene = SCNScene()
+        sceneView.session = ARSession()
+        sceneView.scene = SCNScene()
         
         if let geometry = faceNode.geometry {
             let node = SCNNode(geometry: geometry)
             geometry.firstMaterial?.diffuse.contents = UIColor.blue
-            arView.scene.rootNode.addChildNode(node)
+            sceneView.scene.rootNode.addChildNode(node)
             
         }
     }
     
-    private func run() {
-        let configuration = ARFaceTrackingConfiguration()
-        configuration.maximumNumberOfTrackedFaces = 1
-        
-        arView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-    }
-    
-}
-
-final class Coordinator: NSObject, ARSCNViewDelegate {
-    let parent: EyebrowSupportView
-    
-    var leftEyeNode = SCNReferenceNode()
-    var rightEyeNode = SCNReferenceNode()
-    
-    init(_ sampleAR: EyebrowSupportView) {
-        self.parent = sampleAR
-    }
-    
-    // 新しく追加されたアンカーに対応する SceneKit ノードを提供するようにデリゲートに依頼
-    // ここで形やARで何出すか？を作ってる。オブジェクトを生成してる。
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
         // ARSCNView、ARFaceAnchorを取得
@@ -84,16 +230,10 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
         let node = SCNNode(geometry: faceGeometry)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
         
-        // 眉毛の画像を表示させたい
-        let imageNode = SCNNode()
-        //FIXME: 大きさ調整
-        let imageGeo = SCNPlane(width: 0.02, height: 0.01)
-        imageGeo.firstMaterial?.diffuse.contents = UIImage(named: parent.viewModel.image.rawValue)
-        imageNode.geometry = imageGeo
-        imageNode.name = "image"
-        imageNode.position = SCNVector3(0, 0, 0)
-        node.addChildNode(imageNode)
-        imageNode.geometry?.firstMaterial?.fillMode = .fill
+        node.addChildNode(makeImageNode(name: "cat", num: 0.0))
+        node.addChildNode(makeImageNode(name: "mayuge2", num: 0.2))
+        
+        print(node.childNodes.count)
         
         node.geometry?.firstMaterial?.fillMode = .lines
         return node
@@ -106,21 +246,78 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
         guard let faceAnchor = anchor as? ARFaceAnchor, let faceGeometry = node.geometry as? ARSCNFaceGeometry else {
             return
         }
-        print("==============================")
-        let child = node.childNode(withName: "image", recursively: false)
-        if let child {
-            //FIXME: 眉毛の位置にする
-            child.position = SCNVector3(faceAnchor.geometry.vertices[100])
-            print(child.position.x)
-            print(child.position.y)
-            print(child.position.z)
+        guard let viewModel else {
+            faceGeometry.update(from: faceAnchor.geometry)
+            return
         }
         
+        if viewModel.tappedImage {
+            print("ぴけらった！")
+            selectedImage(node: node)
+            
+            DispatchQueue.main.async {
+                viewModel.oldImage = viewModel.newImage
+                viewModel.tappedImage = false
+            }
         
+        }
+        
+        if let child = node.childNode(withName: viewModel.newImage, recursively: false) {
+            print("ぽけけ")
+            //FIXME: 眉毛の位置にする?
+            child.position = SCNVector3Make(0.0, 0.0, 0.0)
+        }
         
         // フェイスジオメトリを更新
         faceGeometry.update(from: faceAnchor.geometry)
     }
+    
+    // OK
+    private func makeImageNode(name: String, num: CGFloat) -> SCNNode {
+        print("ほげほげ〜")
+        // 眉毛の画像を表示させたい
+        let imageNode = SCNNode()
+        //FIXME: 大きさ調整
+        let imageGeo = SCNPlane(width: 0.02, height: 0.01)
+        imageGeo.firstMaterial?.diffuse.contents = UIImage(named: name)
+        imageNode.geometry = imageGeo
+        imageNode.name = name
+        imageNode.position = SCNVector3(num, num, num)
+        imageNode.opacity = 0.0
+        imageNode.geometry?.firstMaterial?.fillMode = .fill
+        
+        return imageNode
+    }
+    
+    func selectedImage(node: SCNNode) {
+        guard let viewModel else { return }
+        if let oldNode = node.childNode(withName: viewModel.oldImage, recursively: false),
+            let newNode = node.childNode(withName: viewModel.newImage, recursively: false) {
+            print("あるある")
+            oldNode.opacity = 0.0
+            print("あったあった")
+            newNode.opacity = 1.0
+        }
+        
+    }
+    
 }
 
 
+struct TestAR: UIViewControllerRepresentable {
+    typealias UIViewControllerType = ARViewController
+    
+    @ObservedObject var viewModel: EyebrowSupportViewModel
+    
+    func makeUIViewController(context: Context) -> ARViewController {
+        let view = ARViewController()
+        view.viewModel = viewModel
+        
+        return view
+    }
+    
+    func updateUIViewController(_ uiViewController: ARViewController, context: Context) {
+        uiViewController.viewModel = viewModel
+    }
+    
+}

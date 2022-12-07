@@ -12,10 +12,22 @@ import SwiftUI
 
 struct FaceScanView: View {
     @Binding var shouldScanningFace: Bool
+    @StateObject var viewModel = FaceScanViewModel()
     var body: some View {
         ZStack {
-            DescriptionView(shouldScanningFace: $shouldScanningFace)
+            
+            FaceTracking(viewModel: viewModel)
+            DescriptionView(shouldScanningFace: $shouldScanningFace, viewModel: viewModel)
             FaceContourLine()
+        }
+        .alert(Text("計測が完了しました！"), isPresented: $viewModel.showAlert) {
+            Button {
+                viewModel.saveDistance()
+                //FIXME: うぃずあにめーしょん！
+                shouldScanningFace = false
+            } label: {
+                Text("OK")
+            }
         }
     }
 }

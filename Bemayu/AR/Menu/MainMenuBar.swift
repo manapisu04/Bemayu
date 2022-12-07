@@ -20,7 +20,7 @@ struct MainMenuBar: View {
                 ZStack {
                     Rectangle()
                         .foregroundColor(Color("barColor"))
-                        .frame(width: .infinity)
+                        .frame(maxWidth: .infinity)
                         .frame(height: 100.0)
                     
                     HStack {

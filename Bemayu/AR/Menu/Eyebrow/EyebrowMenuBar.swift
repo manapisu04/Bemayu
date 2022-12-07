@@ -45,7 +45,8 @@ struct EyebrowMenuBar: View {
                         }
                     }
                 }
-                .frame(width: .infinity, height: 200.0)
+                .frame(maxWidth: .infinity)
+                .frame(height: 200.0)
             }
             .edgesIgnoringSafeArea(.bottom)
             .offset(x: 0, y: isShowEyebrowMenu ? 0 : geometry.size.height)

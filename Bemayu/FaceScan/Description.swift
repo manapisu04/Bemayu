@@ -10,6 +10,7 @@ import SwiftUI
 // FIXME: あとで上下からにゅ〜ってでてくるようなアニメーションをつける
 struct DescriptionView: View {
     @Binding var shouldScanningFace: Bool
+    @ObservedObject var viewModel: FaceScanViewModel
     var body: some View {
         VStack {
             ZStack {
@@ -38,6 +39,7 @@ struct DescriptionView: View {
                     .foregroundColor(Color("barColor"))
                 Button {
                     // TODO: shouldをfalseにして、眉と目の距離を端末に保存する処理
+                    viewModel.tappedButton()
                 } label: {
                     Image(systemName: "button.programmable")
                         .renderingMode(.template)

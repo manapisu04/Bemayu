@@ -22,7 +22,6 @@ struct FaceScanView: View {
         }
         .alert(Text("計測が完了しました！"), isPresented: $viewModel.showAlert) {
             Button {
-                viewModel.saveDistance()
                 //FIXME: うぃずあにめーしょん！
                 shouldScanningFace = false
             } label: {

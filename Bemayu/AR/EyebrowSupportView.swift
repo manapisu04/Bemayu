@@ -63,8 +63,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode(geometry: faceGeometry)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
         
-        node.addChildNode(makeImageNode(name: "cat", num: 0.0))
-        node.addChildNode(makeImageNode(name: "mayuge2", num: 0.2))
+        node.addChildNode(makeImageNode(name: "cat"))
+        node.addChildNode(makeImageNode(name: "mayuge2"))
         
         print(node.childNodes.count)
         
@@ -98,7 +98,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         if let child = node.childNode(withName: viewModel.newImage, recursively: false) {
             print("ぽけけ")
             //FIXME: 眉毛の位置にする?
-            child.position = SCNVector3Make(0.0, 0.0, 0.0)
+            child.position = viewModel.rigftEyebrowPosition ?? SCNVector3(0, 0, 0)
         }
         
         // フェイスジオメトリを更新
@@ -106,7 +106,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     }
     
     // OK
-    private func makeImageNode(name: String, num: CGFloat) -> SCNNode {
+    private func makeImageNode(name: String) -> SCNNode {
         print("ほげほげ〜")
         // 眉毛の画像を表示させたい
         let imageNode = SCNNode()
@@ -115,7 +115,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         imageGeo.firstMaterial?.diffuse.contents = UIImage(named: name)
         imageNode.geometry = imageGeo
         imageNode.name = name
-        imageNode.position = SCNVector3(num, num, num)
+        imageNode.position = SCNVector3(0, 0, 0)
         imageNode.opacity = 0.0
         imageNode.geometry?.firstMaterial?.fillMode = .fill
         

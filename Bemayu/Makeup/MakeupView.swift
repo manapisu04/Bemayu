@@ -19,6 +19,9 @@ struct MakeupView: View {
     var body: some View {
         ZStack {
             TestAR(viewModel: viewModel)
+                .onAppear {
+                    viewModel.setEyebrowPosition()
+                }
 //            EyebrowSupportView(viewModel: viewModel)
             VStack {
                 Spacer()

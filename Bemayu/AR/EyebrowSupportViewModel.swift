@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ARKit
 
 class EyebrowSupportViewModel: ObservableObject {
     //FIXME: ここも永続化できると良い
@@ -13,8 +14,25 @@ class EyebrowSupportViewModel: ObservableObject {
     @Published var newImage = "mayuge2"
     @Published var tappedImage: Bool = false
     
-    func load(key: String) {
-        
+    var leftEyebrowPosition: SCNVector3?
+    var rigftEyebrowPosition: SCNVector3?
+    
+    let facePartsService = FacePartsService.shared
+    
+    func setEyebrowPosition() {
+        if let leftEyebrowData = load(key: leftEyebrow),
+           let rightEyebrowData = load(key: rightEyebrow) {
+            leftEyebrowPosition = leftEyebrowData
+            rigftEyebrowPosition = rightEyebrowData
+        }
+    }
+    
+    func load(key: String) -> SCNVector3? {
+        if let position = facePartsService.load(key: key) {
+            return position
+        } else {
+            return nil
+        }
     }
     
     func changeImage(name: String) {

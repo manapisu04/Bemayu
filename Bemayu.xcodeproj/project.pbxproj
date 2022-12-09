@@ -27,6 +27,8 @@
 		7F9BB9D828FFC7E4000E6C87 /* EyebrowMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */; };
 		7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */; };
 		7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */; };
+		7FC74E802942BDF400A44AC0 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC74E7F2942BDF400A44AC0 /* Properties.swift */; };
+		7FC74E822942C9E900A44AC0 /* SCNVector3+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC74E812942C9E900A44AC0 /* SCNVector3+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyebrowMenuButton.swift; sourceTree = "<group>"; };
 		7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuBar.swift; sourceTree = "<group>"; };
 		7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
+		7FC74E7F2942BDF400A44AC0 /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		7FC74E812942C9E900A44AC0 /* SCNVector3+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				7F9BB9D228FFC773000E6C87 /* FacePartsService.swift */,
 				7F6B092D291BADD4003FB962 /* Calculation.swift */,
 				7F6ED82E292C54BE00609FD4 /* Double+.swift */,
+				7FC74E7F2942BDF400A44AC0 /* Properties.swift */,
+				7FC74E812942C9E900A44AC0 /* SCNVector3+.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 				7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */,
 				7F4515742919D99E0055EAA5 /* Description.swift in Sources */,
 				7F1CA6862918C69400B545E9 /* TestView.swift in Sources */,
+				7FC74E802942BDF400A44AC0 /* Properties.swift in Sources */,
 				7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */,
 				7F9BB9D328FFC773000E6C87 /* FacePartsService.swift in Sources */,
 				7F9BB9D528FFC7C9000E6C87 /* EyebrowMenuBar.swift in Sources */,
@@ -253,6 +260,7 @@
 				7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */,
 				7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */,
 				7F9BB9CE28FFC6D7000E6C87 /* FaceContourLine.swift in Sources */,
+				7FC74E822942C9E900A44AC0 /* SCNVector3+.swift in Sources */,
 				7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */,
 				7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */,
 				7F9BB9D028FFC736000E6C87 /* EyebrowSupportView.swift in Sources */,

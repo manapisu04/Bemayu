@@ -155,19 +155,20 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
             if let landmarks = observation.landmarks {
 
                 if let leftEyebrow = landmarks.leftEyebrow {
-                    parent.viewModel.leftEyebrow = leftEyebrow.normalizedPoints
+                    parent.viewModel.leftEyebrowPoints = leftEyebrow.normalizedPoints
+                    print("まゆまゆ")
                 }
 
                 if let rightEyebrow = landmarks.rightEyebrow {
-                    parent.viewModel.rightEyebrow = rightEyebrow.normalizedPoints
+                    parent.viewModel.rightEyebrowPoints = rightEyebrow.normalizedPoints
                 }
                 
                 if let leftEye = landmarks.leftEye {
-                    parent.viewModel.leftEye = leftEye.normalizedPoints
+                    parent.viewModel.leftEyePoints = leftEye.normalizedPoints
                 }
                 
                 if let rightEye = landmarks.rightEye {
-                    parent.viewModel.rightEye = rightEye.normalizedPoints
+                    parent.viewModel.rightEyePoints = rightEye.normalizedPoints
                 }
             }
         }

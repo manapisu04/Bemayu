@@ -23,7 +23,10 @@ struct FaceScanView: View {
         .alert(Text("計測が完了しました！"), isPresented: $viewModel.showAlert) {
             Button {
                 //FIXME: うぃずあにめーしょん！
-                shouldScanningFace = false
+                withAnimation(.linear) {
+                    shouldScanningFace = false
+                }
+                
             } label: {
                 Text("OK")
             }

@@ -9,17 +9,15 @@ import SwiftUI
 
 // 眉の写真とイメージネーム
 struct EyebrowMenuButton: View {
-    let impression: Impression
-    let title: String
+    let eyebrow: Eyebrow
     let labelColor: Color
     
     @ObservedObject var viewModel: EyebrowSupportViewModel
     
-    init(impression: Impression, title: String, viewModel: EyebrowSupportViewModel) {
-        self.impression = impression
-        self.title = title
+    init(eyebrow: Eyebrow, viewModel: EyebrowSupportViewModel) {
+        self.eyebrow = eyebrow
         self.viewModel = viewModel
-        switch(impression) {
+        switch(eyebrow.type) {
         case .cute:
             self.labelColor = SwiftUI.Color("cuteColor")
         case .cool:
@@ -31,7 +29,7 @@ struct EyebrowMenuButton: View {
     
     var body: some View {
         VStack {
-            Image(title)
+            Image(eyebrow.buttonImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 80.0)
@@ -41,7 +39,7 @@ struct EyebrowMenuButton: View {
                     .foregroundColor(labelColor)
                     .frame(width: 80.0, height: 30.0)
                 
-                Text(title)
+                Text(eyebrow.tag)
                     .foregroundColor(.white)
             }
         }
@@ -50,7 +48,7 @@ struct EyebrowMenuButton: View {
         .gesture(
             TapGesture()
                 .onEnded { _ in
-                    viewModel.changeImage(name: title)
+                    viewModel.changeImage(left: eyebrow.leftImage, right: eyebrow.rightImage)
                     viewModel.tappedImage = true
                 }
         )

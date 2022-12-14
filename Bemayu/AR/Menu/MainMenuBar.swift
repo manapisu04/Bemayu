@@ -25,7 +25,6 @@ struct MainMenuBar: View {
                     
                     HStack {
                         Button {
-                            // FIXME: 眉の画面に遷移
                             withAnimation(.linear) {
                                 self.shouldScanningFace = true
                             }

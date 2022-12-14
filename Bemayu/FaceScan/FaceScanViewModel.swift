@@ -68,6 +68,7 @@ class FaceScanViewModel: ObservableObject {
         // Visionでの両目の距離
         let eyesDistanceByVision = calcu.pythagoreanTheorem(startPoint: leftEyePoints[3], endPoint: rightEyePoints[3])
         
+        // 倍率
         let magnification = eyesDistanceByAR.multiplierFor(eyesDistanceByVision)
         
         print("ぴけらった！")

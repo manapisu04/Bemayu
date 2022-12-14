@@ -40,8 +40,9 @@ struct EyebrowMenuBar: View {
                         
                         // 眉毛ボタン
                         HStack {
-                            EyebrowMenuButton(impression: .cute, title: "mayuge2", viewModel: viewModel)
-                            EyebrowMenuButton(impression: .cool, title: "cat", viewModel: viewModel)
+                            ForEach(Images.shared.eyebrows) { eyebrowData in
+                                EyebrowMenuButton(eyebrow: eyebrowData, viewModel: viewModel)
+                            }
                         }
                     }
                 }

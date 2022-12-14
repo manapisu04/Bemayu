@@ -63,8 +63,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode(geometry: faceGeometry)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
         
-        node.addChildNode(makeImageNode(name: "cat"))
-        node.addChildNode(makeImageNode(name: "mayuge2"))
+        for image in Images.shared.eyebrows {
+            node.addChildNode(makeImageNode(name: image.leftImage))
+            node.addChildNode(makeImageNode(name: image.rightImage))
+        }
         
         print(node.childNodes.count)
         
@@ -89,16 +91,18 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             selectedImage(node: node)
             
             DispatchQueue.main.async {
-                viewModel.oldImage = viewModel.newImage
+                viewModel.oldImages = viewModel.newImages
                 viewModel.tappedImage = false
             }
         
         }
         
-        if let child = node.childNode(withName: viewModel.newImage, recursively: false) {
+        if let leftEyebrowChild = node.childNode(withName: viewModel.newImages.left, recursively: false),
+           let rightEyebrowChild = node.childNode(withName: viewModel.newImages.right, recursively: false) {
             print("ぽけけ")
-            //FIXME: 眉毛の位置にする?
-            child.position = viewModel.rigftEyebrowPosition ?? SCNVector3(0, 0, 0)
+            // 眉毛の位置にする
+            leftEyebrowChild.position = viewModel.leftEyebrowPosition ?? SCNVector3(0, 0, 0)
+            rightEyebrowChild.position = viewModel.rigftEyebrowPosition ?? SCNVector3(0, 0, 0)
         }
         
         // フェイスジオメトリを更新
@@ -124,12 +128,16 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     func selectedImage(node: SCNNode) {
         guard let viewModel else { return }
-        if let oldNode = node.childNode(withName: viewModel.oldImage, recursively: false),
-            let newNode = node.childNode(withName: viewModel.newImage, recursively: false) {
+        if let oldLeftEyebrowNode = node.childNode(withName: viewModel.oldImages.left, recursively: false),
+           let oldRightEyebrowNode = node.childNode(withName: viewModel.oldImages.right, recursively: false),
+           let newLeftEyebrowNode = node.childNode(withName: viewModel.newImages.left, recursively: false),
+           let newRightEyebrowNode = node.childNode(withName: viewModel.newImages.right, recursively: false) {
             print("あるある")
-            oldNode.opacity = 0.0
+            oldLeftEyebrowNode.opacity = 0.0
+            oldRightEyebrowNode.opacity = 0.0
             print("あったあった")
-            newNode.opacity = 1.0
+            newLeftEyebrowNode.opacity = 1.0
+            newRightEyebrowNode.opacity = 1.0
         }
         
     }

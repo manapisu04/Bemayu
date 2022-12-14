@@ -10,8 +10,8 @@ import ARKit
 
 class EyebrowSupportViewModel: ObservableObject {
     //FIXME: ここも永続化できると良い
-    @Published var oldImage = "mayuge2"
-    @Published var newImage = "mayuge2"
+    @Published var oldImages = (left: "mayuge2", right: "mayuge2")
+    @Published var newImages = (left: "mayuge2", right: "mayuge2")
     @Published var tappedImage: Bool = false
     
     var leftEyebrowPosition: SCNVector3?
@@ -35,8 +35,34 @@ class EyebrowSupportViewModel: ObservableObject {
         }
     }
     
-    func changeImage(name: String) {
-        self.newImage = name
+    func tappedButton(name: String) {
+        // 処理
+    }
+    
+    func changeImage(left: String, right: String) {
+        self.newImages = (left: left, right: right)
         //TODO: 永続化の処理
+    }
+}
+
+struct Eyebrow: Identifiable {
+    let id = UUID()
+    let tag: String
+    let buttonImage: String
+    let type: Impression
+    let leftImage: String
+    let rightImage: String
+}
+
+struct Images {
+    static let shared: Images = .init()
+    let eyebrows: [Eyebrow]
+    
+    private init() {
+        var eyebrowsArray: [Eyebrow] = []
+        eyebrowsArray.append(.init(tag: "きりっと", buttonImage: "cool1", type: .cool, leftImage: "mayuge2", rightImage: "momonga"))
+        eyebrowsArray.append(.init(tag: "かわいい", buttonImage: "cute_h", type: .cute, leftImage: "cat", rightImage: "cat2"))
+        
+        self.eyebrows = eyebrowsArray
     }
 }

@@ -11,19 +11,24 @@ struct MakeupView: View {
     // FIXME: これ使いたくないよぉ。。
     @Binding var shouldScanningFace: Bool
     @State var isShowEyebrowMenu = false
+    @ObservedObject var viewModel = EyebrowSupportViewModel()
     
     //FIXME: 初回起動かどうかを見極めて、初回起動なら顔スキャン画面を出す。
     
     // ARの画面、下にボタン
     var body: some View {
         ZStack {
-            TestEyebrowView()
+            TestAR(viewModel: viewModel)
+                .onAppear {
+                    viewModel.setEyebrowPosition()
+                }
+//            EyebrowSupportView(viewModel: viewModel)
             VStack {
                 Spacer()
                 MainMenuBar(shouldScanningFace: $shouldScanningFace, isShowEyebrowMenu: $isShowEyebrowMenu)
             }
             
-            EyebrowMenuBar(isShowEyebrowMenu: $isShowEyebrowMenu)
+            EyebrowMenuBar(isShowEyebrowMenu: $isShowEyebrowMenu, viewModel: viewModel)
         }
     }
 }

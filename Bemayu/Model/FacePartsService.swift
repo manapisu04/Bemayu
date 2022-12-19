@@ -15,14 +15,18 @@ class FacePartsService {
     private init() {}
     
     func save(value: SCNVector3, key: String) {
-        
+        let jsonEncoder = JSONEncoder()
+        guard let data = try? jsonEncoder.encode(value) else {
+            return
+        }
         // 保存
-        UserDefaults.standard.set(value, forKey: key)
+        UserDefaults.standard.set(data, forKey: key)
     }
     
     func load(key: String) -> SCNVector3? {
-        var value = UserDefaults.standard.object(forKey: key)
-        guard let value = value as? SCNVector3 else {
+        let jsonDecoder = JSONDecoder()
+        guard let data = UserDefaults.standard.data(forKey: key),
+              let value = try? jsonDecoder.decode(SCNVector3.self, from: data) else {
             return nil
         }
         

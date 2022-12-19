@@ -39,12 +39,22 @@ struct CalculationDistance {
     /*
      CGFloatをSCNVector3に変換する
      */
-    func convertingToSCNVector3(cgFloat: CGFloat, magnification: Double) -> SCNVector3 {
-        let distanceByAR = cgFloat * magnification
+    func convertingToSCNVector3(cgFloat: CGFloat, magnification: Double, scnVector3: SCNVector3) -> SCNVector3 {
+        // ARでの眉と目の距離。*100するとcmに直せる。
+        let distanceByAR = Float(cgFloat * magnification)
         print(distanceByAR)
         
-        // FIXME: 仮置き
-        return SCNVector3(0, 0, 0)
+//        let y = sqrt(square(distanceByAR) - Float(square(scnVector3.x)))
+//        print(square(distanceByAR))
+//        print(square(scnVector3.x))
+//        print(y)
+        
+        return SCNVector3Make(scnVector3.x, scnVector3.y + distanceByAR, scnVector3.z)
+    }
+    
+    // 二乗する
+    func square<Element:Numeric>(_ num: Element) -> Element {
+        return num * num
     }
     
     /*

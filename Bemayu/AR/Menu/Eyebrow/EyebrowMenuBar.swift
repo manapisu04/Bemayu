@@ -10,6 +10,7 @@ import SwiftUI
 // 下部に表示するメニューバー
 struct EyebrowMenuBar: View {
     @Binding var isShowEyebrowMenu: Bool
+    @StateObject var viewModel: EyebrowSupportViewModel
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -39,13 +40,14 @@ struct EyebrowMenuBar: View {
                         
                         // 眉毛ボタン
                         HStack {
-                            ForEach(1..<5) { _ in
-                                EyebrowMenuButton(impression: .cute, title: "cute_h")
+                            ForEach(Images.shared.eyebrows) { eyebrowData in
+                                EyebrowMenuButton(eyebrow: eyebrowData, viewModel: viewModel)
                             }
                         }
                     }
                 }
-                .frame(width: .infinity, height: 200.0)
+                .frame(maxWidth: .infinity)
+                .frame(height: 200.0)
             }
             .edgesIgnoringSafeArea(.bottom)
             .offset(x: 0, y: isShowEyebrowMenu ? 0 : geometry.size.height)

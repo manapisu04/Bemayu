@@ -32,7 +32,8 @@ struct DescriptionView: View {
                         .foregroundColor(.white)
                 }
             }
-            .frame(width: .infinity, height: 150.0)
+            .frame(maxWidth: .infinity)
+            .frame(height: 150.0)
             Spacer()
             ZStack {
                 Rectangle()
@@ -47,7 +48,8 @@ struct DescriptionView: View {
                         .font(.system(size: 70.0))
                 }
             }
-            .frame(width: .infinity, height: 120.0)
+            .frame(maxWidth: .infinity)
+            .frame(height: 120.0)
         }
         .edgesIgnoringSafeArea(.all)
     }

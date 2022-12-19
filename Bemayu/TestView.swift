@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct TestView: View {
+    var str = String(Int.random(in: 1...10))
     var body: some View {
-        Text("Camera...")
+        Text(str)
     }
 }
 

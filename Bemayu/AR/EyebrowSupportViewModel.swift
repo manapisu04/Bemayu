@@ -60,8 +60,10 @@ struct Images {
     
     private init() {
         var eyebrowsArray: [Eyebrow] = []
-        eyebrowsArray.append(.init(tag: "きりっと", buttonImage: "cool1", type: .cool, leftImage: "mayuge2", rightImage: "momonga"))
-        eyebrowsArray.append(.init(tag: "かわいい", buttonImage: "cute_h", type: .cute, leftImage: "cat", rightImage: "cat2"))
+        eyebrowsArray.append(.init(tag: "きりっと", buttonImage: "cool1", type: .cool, leftImage: "chokusen_l", rightImage: "chokusen_r"))
+        eyebrowsArray.append(.init(tag: "かわいい", buttonImage: "cute_h", type: .cute, leftImage: "heikoumayu_l", rightImage: "heikoumayu_r"))
+        eyebrowsArray.append(.init(tag: "ナチュラル", buttonImage: "natural1", type: .natural, leftImage: "arch_l", rightImage: "arch_r"))
+        eyebrowsArray.append(.init(tag: "かっこいい", buttonImage: "cool1", type: .cool, leftImage: "sharp_l", rightImage: "sharp_r"))
         
         self.eyebrows = eyebrowsArray
     }

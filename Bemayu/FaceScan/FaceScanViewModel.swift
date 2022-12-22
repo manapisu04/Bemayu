@@ -16,8 +16,11 @@ class FaceScanViewModel: ObservableObject {
     var leftEyebrowPoints: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
     var rightEyebrowPoints: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.0, y: 0.0)]
     
-    var leftEyePosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
-    var rightEyePosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
+    var leftEyeInnerPosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
+    var rightEyeInnerPosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
+    
+    var leftEyeOuterPosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
+    var rightEyeOuterPosition: SCNVector3 = SCNVector3(x: 0, y: 0, z: 0)
     
     // フラグ
     var canFacialRecognize = false
@@ -60,10 +63,13 @@ class FaceScanViewModel: ObservableObject {
         let calcu = CalculationDistance()
         
         // ARでの両目の距離
-        let eyesDistanceByAR = calcu.distanceMeasurement(startPosition: leftEyePosition, endPosition: rightEyePosition)
+        let eyesDistanceByAR = calcu.distanceMeasurement(startPosition: leftEyeInnerPosition, endPosition: rightEyeInnerPosition)
         
-        let leftDistance = calcu.pythagoreanTheorem(startPoint: leftEyePoints[3], endPoint: leftEyebrowPoints[3])
-        let rightDistance = calcu.pythagoreanTheorem(startPoint: rightEyePoints[3], endPoint: rightEyebrowPoints[3])
+        let leftEyebrowCenter = calcu.center(start: leftEyebrowPoints[2], end: leftEyebrowPoints[3])
+        let rightEyebrowCenter = calcu.center(start: rightEyebrowPoints[2], end: rightEyebrowPoints[3])
+        
+        let leftDistance = calcu.pythagoreanTheorem(startPoint: leftEyePoints[3], endPoint: leftEyebrowCenter)
+        let rightDistance = calcu.pythagoreanTheorem(startPoint: rightEyePoints[3], endPoint: rightEyebrowCenter)
         
         // Visionでの両目の距離
         let eyesDistanceByVision = calcu.pythagoreanTheorem(startPoint: leftEyePoints[3], endPoint: rightEyePoints[3])
@@ -71,10 +77,17 @@ class FaceScanViewModel: ObservableObject {
         // 倍率
         let magnification = eyesDistanceByAR.multiplierFor(eyesDistanceByVision)
         
-        print("ぴけらった！")
-        let leftEyebrowPosition = calcu.convertingToSCNVector3(cgFloat: leftDistance, magnification: magnification, scnVector3: leftEyePosition)
         
-        let rightEyebrowPosition = calcu.convertingToSCNVector3(cgFloat: rightDistance, magnification: magnification, scnVector3: rightEyePosition)
+        
+        let leftEyeCenter = calcu.center(start: leftEyeInnerPosition, end: leftEyeOuterPosition)
+        
+        let rightEyeCenter = calcu.center(start: rightEyeInnerPosition, end: rightEyeOuterPosition)
+        
+        print("ぴけらった！")
+        let leftEyebrowPosition = calcu.convertingToSCNVector3(cgFloat: leftDistance, magnification: magnification, scnVector3: leftEyeCenter)
+        
+        let rightEyebrowPosition = calcu.convertingToSCNVector3(cgFloat: rightDistance, magnification: magnification, scnVector3: rightEyeCenter)
+        
         
         saveDistance(value: leftEyebrowPosition, key: leftEyebrow)
         saveDistance(value: rightEyebrowPosition, key: rightEyebrow)

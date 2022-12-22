@@ -21,7 +21,6 @@ struct EyebrowMenuBar: View {
                     VStack {
                         // 閉じるボタン
                         HStack {
-                            // FIXME: いったんぼたん。あとでスワイプしてとじるにしちゃおっかな！
                             Button {
                                 withAnimation {
                                     self.isShowEyebrowMenu = false

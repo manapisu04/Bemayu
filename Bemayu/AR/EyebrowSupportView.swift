@@ -115,7 +115,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // 眉毛の画像を表示させたい
         let imageNode = SCNNode()
         //FIXME: 大きさ調整
-        let imageGeo = SCNPlane(width: 0.02, height: 0.01)
+        let imageGeo = SCNPlane(width: 0.043, height: 0.01)
         imageGeo.firstMaterial?.diffuse.contents = UIImage(named: name)
         imageNode.geometry = imageGeo
         imageNode.name = name
@@ -132,12 +132,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
            let oldRightEyebrowNode = node.childNode(withName: viewModel.oldImages.right, recursively: false),
            let newLeftEyebrowNode = node.childNode(withName: viewModel.newImages.left, recursively: false),
            let newRightEyebrowNode = node.childNode(withName: viewModel.newImages.right, recursively: false) {
-            print("あるある")
+            // 前のノードを非表示に
             oldLeftEyebrowNode.opacity = 0.0
             oldRightEyebrowNode.opacity = 0.0
-            print("あったあった")
-            newLeftEyebrowNode.opacity = 1.0
-            newRightEyebrowNode.opacity = 1.0
+            
+            // 新しいノードを表示する
+            newLeftEyebrowNode.opacity = 0.8
+            newRightEyebrowNode.opacity = 0.8
         }
         
     }

@@ -98,6 +98,22 @@ struct CalculationDistance {
         
         return Double(distance)
     }
+    
+    func center(start: CGPoint, end: CGPoint) -> CGPoint {
+        let x = (start.x + end.x) / 2
+        let y = (start.y + end.y) / 2
+        let cgPoint = CGPoint(x: x, y: y)
+        return cgPoint
+    }
+    
+    func center(start: SCNVector3, end: SCNVector3) -> SCNVector3 {
+        let x = (start.x + end.x) / 2
+        let y = (start.y + end.y) / 2
+        let z = (start.z + end.z) / 2
+        let scnVector3 = SCNVector3Make(x, y, z)
+        
+        return scnVector3
+    }
 }
 
 struct Position {

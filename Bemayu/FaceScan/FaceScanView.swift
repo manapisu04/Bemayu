@@ -22,7 +22,11 @@ struct FaceScanView: View {
         }
         .alert(Text("計測が完了しました！"), isPresented: $viewModel.showAlert) {
             Button {
-                //FIXME: うぃずあにめーしょん！
+                // FIXME: 初回起動ならオフにする
+                if LaunchUtil.launchedVersion == "" {
+                    LaunchUtil.launchedVersion = "Initial setup complete"
+                    ContentViewModel.shared.switchStatus()
+                }
                 withAnimation(.linear) {
                     shouldScanningFace = false
                 }

@@ -39,7 +39,6 @@ struct DescriptionView: View {
                 Rectangle()
                     .foregroundColor(Color("barColor"))
                 Button {
-                    // TODO: shouldをfalseにして、眉と目の距離を端末に保存する処理
                     viewModel.tappedButton()
                 } label: {
                     Image(systemName: "button.programmable")

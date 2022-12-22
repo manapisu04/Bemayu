@@ -27,6 +27,8 @@
 		7F9BB9D828FFC7E4000E6C87 /* EyebrowMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */; };
 		7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */; };
 		7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */; };
+		7FBA26C7294C03490014B2DB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA26C6294C03490014B2DB /* MainView.swift */; };
+		7FBA26C9294C08080014B2DB /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA26C8294C08080014B2DB /* FirstView.swift */; };
 		7FC74E802942BDF400A44AC0 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC74E7F2942BDF400A44AC0 /* Properties.swift */; };
 		7FC74E822942C9E900A44AC0 /* SCNVector3+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC74E812942C9E900A44AC0 /* SCNVector3+.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyebrowMenuButton.swift; sourceTree = "<group>"; };
 		7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuBar.swift; sourceTree = "<group>"; };
 		7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
+		7FBA26C6294C03490014B2DB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7FBA26C8294C08080014B2DB /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		7FC74E7F2942BDF400A44AC0 /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		7FC74E812942C9E900A44AC0 /* SCNVector3+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +109,8 @@
 			children = (
 				7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */,
 				7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */,
+				7FBA26C8294C08080014B2DB /* FirstView.swift */,
+				7FBA26C6294C03490014B2DB /* MainView.swift */,
 				7F1CA6852918C69400B545E9 /* TestView.swift */,
 				7F1CA6872918D50B00B545E9 /* Makeup */,
 				7F9BB9CA28FFC5FB000E6C87 /* FaceScan */,
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F9BB9D828FFC7E4000E6C87 /* EyebrowMenuButton.swift in Sources */,
+				7FBA26C7294C03490014B2DB /* MainView.swift in Sources */,
 				7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */,
 				7F4515742919D99E0055EAA5 /* Description.swift in Sources */,
 				7F1CA6862918C69400B545E9 /* TestView.swift in Sources */,
@@ -255,6 +262,7 @@
 				7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */,
 				7F9BB9D328FFC773000E6C87 /* FacePartsService.swift in Sources */,
 				7F9BB9D528FFC7C9000E6C87 /* EyebrowMenuBar.swift in Sources */,
+				7FBA26C9294C08080014B2DB /* FirstView.swift in Sources */,
 				7F6ED82F292C54BE00609FD4 /* Double+.swift in Sources */,
 				7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */,
 				7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */,
@@ -403,8 +411,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -435,8 +444,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

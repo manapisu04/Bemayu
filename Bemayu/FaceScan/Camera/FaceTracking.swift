@@ -132,11 +132,16 @@ final class Coordinator: NSObject, ARSCNViewDelegate {
             if let child {
                 child.position = SCNVector3(faceAnchor.geometry.vertices[x])
                 
-                // 358が左目、1168が右目
+                // 358（いんなー）、1102（あうたー）が左目
+                // 1168（いんなー）、1070（あうたー）が右目
                 if x == 358 {
-                    self.parent.viewModel.leftEyePosition = child.position
+                    self.parent.viewModel.leftEyeInnerPosition = child.position
                 } else if x == 1168 {
-                    self.parent.viewModel.rightEyePosition = child.position
+                    self.parent.viewModel.rightEyeInnerPosition = child.position
+                } else if x == 1102 {
+                    self.parent.viewModel.leftEyeOuterPosition = child.position
+                } else if x == 1070 {
+                    self.parent.viewModel.rightEyeOuterPosition = child.position
                 }
             }
             

@@ -9,3 +9,4 @@ import Foundation
 
 let leftEyebrow: String = "LeftEyebrow"
 let rightEyebrow: String = "RightEyebrow"
+let launchedVersionKey: String = "LaunchedVersionKey"

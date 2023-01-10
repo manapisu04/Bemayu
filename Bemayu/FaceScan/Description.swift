@@ -11,6 +11,9 @@ import SwiftUI
 struct DescriptionView: View {
     @Binding var shouldScanningFace: Bool
     @ObservedObject var viewModel: FaceScanViewModel
+    // FIXME: これいや
+    let height = UIScreen.main.bounds.height
+    
     var body: some View {
         VStack {
             ZStack {
@@ -36,7 +39,7 @@ struct DescriptionView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 150.0)
+            .frame(height: height / 5.5)
             Spacer()
             ZStack {
                 Rectangle()
@@ -44,14 +47,13 @@ struct DescriptionView: View {
                 Button {
                     viewModel.tappedButton()
                 } label: {
-                    Image(systemName: "button.programmable")
-                        .renderingMode(.template)
+                    FaceScanButton()
                         .foregroundColor(.white)
-                        .font(.system(size: 70.0))
+                        .font(.system(size: height / 12))
                 }
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 120.0)
+            .frame(height: height / 8)
         }
         .edgesIgnoringSafeArea(.all)
     }

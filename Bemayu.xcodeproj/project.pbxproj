@@ -13,6 +13,7 @@
 		7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3CFCD72923156E00635A9F /* FaceTracking.swift */; };
 		7F4515742919D99E0055EAA5 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515732919D99E0055EAA5 /* Description.swift */; };
 		7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */; };
+		7F502942296CFAED00FF33A3 /* FaceScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F502941296CFAEC00FF33A3 /* FaceScanButton.swift */; };
 		7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B092D291BADD4003FB962 /* Calculation.swift */; };
 		7F6ED82F292C54BE00609FD4 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6ED82E292C54BE00609FD4 /* Double+.swift */; };
 		7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */; };
@@ -40,6 +41,7 @@
 		7F3CFCD72923156E00635A9F /* FaceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTracking.swift; sourceTree = "<group>"; };
 		7F4515732919D99E0055EAA5 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanViewModel.swift; sourceTree = "<group>"; };
+		7F502941296CFAEC00FF33A3 /* FaceScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanButton.swift; sourceTree = "<group>"; };
 		7F6B092D291BADD4003FB962 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		7F6ED82E292C54BE00609FD4 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		7F9BB9B828FFC58D000E6C87 /* Bemayu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bemayu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		7F9BB9CA28FFC5FB000E6C87 /* FaceScan */ = {
 			isa = PBXGroup;
 			children = (
+				7F502941296CFAEC00FF33A3 /* FaceScanButton.swift */,
 				7F9BB9CB28FFC66A000E6C87 /* FaceScanView.swift */,
 				7F9BB9CD28FFC6D7000E6C87 /* FaceContourLine.swift */,
 				7F4515732919D99E0055EAA5 /* Description.swift */,
@@ -272,6 +275,7 @@
 				7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */,
 				7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */,
 				7F9BB9D028FFC736000E6C87 /* EyebrowSupportView.swift in Sources */,
+				7F502942296CFAED00FF33A3 /* FaceScanButton.swift in Sources */,
 				7F9BB9BE28FFC58D000E6C87 /* ContentView.swift in Sources */,
 				7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */,
 				7F11D48B2930538C00506B97 /* EyebrowSupportViewModel.swift in Sources */,
@@ -414,6 +418,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,6 +452,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

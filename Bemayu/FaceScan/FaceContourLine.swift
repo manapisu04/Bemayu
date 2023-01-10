@@ -35,8 +35,7 @@ struct FaceContourLine: View {
             VStack {
                 Ellipse()
                     .stroke(lineWidth: 3)
-                // FIXME: でばっぐときカラー見えんので！あとでコメントアウト戻してねん
-//                    .foregroundColor(.white)
+                    .foregroundColor(.white)
                     .frame(width: geo.size.width / widthRatio, height: geo.size.height / heightRatio)
             }
             // 中心

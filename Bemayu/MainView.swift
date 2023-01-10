@@ -13,8 +13,10 @@ struct MainView: View {
     var body: some View {
         if shouldScanningFace {
             FaceScanView(shouldScanningFace: $shouldScanningFace)
+                .edgesIgnoringSafeArea(.all)
         } else {
             MakeupView(shouldScanningFace: $shouldScanningFace)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }

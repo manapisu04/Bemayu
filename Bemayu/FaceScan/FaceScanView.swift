@@ -15,7 +15,7 @@ struct FaceScanView: View {
     @StateObject var viewModel = FaceScanViewModel()
     var body: some View {
         ZStack {
-            TestScan(viewModel: viewModel)
+            ARFaceScan(viewModel: viewModel)
             DescriptionView(shouldScanningFace: $shouldScanningFace, viewModel: viewModel)
             FaceContourLine()
         }

@@ -25,6 +25,7 @@ class FaceScanViewModel: ObservableObject {
     // フラグ
     var canFacialRecognize = false
     @Published var showAlert = false
+    @Published var showErrorAlert = false
     
     init() {
         
@@ -56,7 +57,7 @@ class FaceScanViewModel: ObservableObject {
      */
     func tappedButton() {
         if !canFacialRecognize {
-            showAlert = false
+            showErrorAlert = true
             return
         }
         

@@ -28,8 +28,11 @@ struct DescriptionView: View {
                         }
                     }
                     .padding(20.0)
-                    Text("フレームにお顔がおさまるように\n写真を撮ってください。")
-                        .foregroundColor(.white)
+                    if viewModel.showErrorAlert {
+                            errorMessage
+                        } else {
+                            description
+                        }
                 }
             }
             .frame(maxWidth: .infinity)
@@ -51,6 +54,16 @@ struct DescriptionView: View {
             .frame(height: 120.0)
         }
         .edgesIgnoringSafeArea(.all)
+    }
+    
+    var description: some View {
+        Text("フレームにお顔がおさまるように\n写真を撮ってください。")
+            .foregroundColor(.white)
+    }
+    
+    var errorMessage: some View {
+        Text("計測に失敗しました…\nもう一度お試しください。")
+            .foregroundColor(.red)
     }
 }
 

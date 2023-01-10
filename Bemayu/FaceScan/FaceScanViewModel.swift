@@ -56,7 +56,7 @@ class FaceScanViewModel: ObservableObject {
      顔認識できている場合のみ、眉位置を保存する。
      */
     func tappedButton() {
-        if !canFacialRecognize {
+        if !canFacialRecognize || isFacePortray() {
             showErrorAlert = true
             return
         }
@@ -98,4 +98,23 @@ class FaceScanViewModel: ObservableObject {
         showAlert = true
     }
     
+    func isFacePortray() -> Bool {
+        if leftEyeInnerPosition.x == 0.0, leftEyeInnerPosition.y == 0.0, leftEyeInnerPosition.z == 0.0 {
+            return true
+        }
+        
+        if rightEyeInnerPosition.x == 0.0, rightEyeInnerPosition.y == 0.0, rightEyeInnerPosition.z == 0.0 {
+            return true
+        }
+        
+        if leftEyeOuterPosition.x == 0.0, leftEyeOuterPosition.y == 0.0, leftEyeOuterPosition.z == 0.0 {
+            return true
+        }
+        
+        if rightEyeOuterPosition.x == 0.0, rightEyeOuterPosition.y == 0.0, rightEyeOuterPosition.z == 0.0 {
+            return true
+        }
+        
+        return false
+    }
 }

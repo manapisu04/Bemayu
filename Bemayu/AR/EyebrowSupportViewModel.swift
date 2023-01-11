@@ -5,14 +5,15 @@
 //  Created by cmStudent on 2022/11/25.
 //
 
-import Foundation
+import SwiftUI
 import ARKit
 
 class EyebrowSupportViewModel: ObservableObject {
     //FIXME: ここも永続化できると良い
-    @Published var oldImages = (left: "mayuge2", right: "mayuge2")
-    @Published var newImages = (left: "mayuge2", right: "mayuge2")
+    @Published var oldImages = (left: "arch_l_b", right: "arch_r_b")
+    @Published var newImages = (left: "arch_l_b", right: "arch_r_b")
     @Published var tappedImage: Bool = false
+    @Published var lineColor: LineColor = .black
     
     var leftEyebrowPosition: SCNVector3?
     var rigftEyebrowPosition: SCNVector3?
@@ -40,7 +41,9 @@ class EyebrowSupportViewModel: ObservableObject {
     }
     
     func changeImage(left: String, right: String) {
-        self.newImages = (left: left, right: right)
+        let leftImageName = left + lineColor.rawValue
+        let rightImageName = right + lineColor.rawValue
+        self.newImages = (left: leftImageName, right: rightImageName)
         //TODO: 永続化の処理
     }
 }
@@ -66,5 +69,19 @@ struct Images {
         eyebrowsArray.append(.init(tag: "かっこいい", buttonImage: "cool1", type: .cool, leftImage: "sharp_l", rightImage: "sharp_r"))
         
         self.eyebrows = eyebrowsArray
+    }
+}
+
+enum LineColor: String {
+    case black = "_b"
+    case green = "_g"
+    
+    func color() -> Color {
+        switch self {
+        case .black:
+            return .black
+        case .green:
+            return .green
+        }
     }
 }

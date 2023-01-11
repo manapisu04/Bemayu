@@ -63,9 +63,14 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode(geometry: faceGeometry)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
         
+        // ここで画像を登録してる
         for image in Images.shared.eyebrows {
-            node.addChildNode(makeImageNode(name: image.leftImage))
-            node.addChildNode(makeImageNode(name: image.rightImage))
+            // 黒
+            node.addChildNode(makeImageNode(name: image.leftImage + "_b"))
+            node.addChildNode(makeImageNode(name: image.rightImage + "_b"))
+            // 緑
+            node.addChildNode(makeImageNode(name: image.leftImage + "_g"))
+            node.addChildNode(makeImageNode(name: image.rightImage + "_g"))
         }
         
         print(node.childNodes.count)

@@ -11,6 +11,7 @@
 		7F1CA6862918C69400B545E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6852918C69400B545E9 /* TestView.swift */; };
 		7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6882918D52500B545E9 /* MakeupView.swift */; };
 		7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3CFCD72923156E00635A9F /* FaceTracking.swift */; };
+		7F3DA7DA296E75690089CB1B /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DA7D9296E75690089CB1B /* ColorButton.swift */; };
 		7F4515742919D99E0055EAA5 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515732919D99E0055EAA5 /* Description.swift */; };
 		7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */; };
 		7F502942296CFAED00FF33A3 /* FaceScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F502941296CFAEC00FF33A3 /* FaceScanButton.swift */; };
@@ -39,6 +40,7 @@
 		7F1CA6852918C69400B545E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		7F1CA6882918D52500B545E9 /* MakeupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupView.swift; sourceTree = "<group>"; };
 		7F3CFCD72923156E00635A9F /* FaceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTracking.swift; sourceTree = "<group>"; };
+		7F3DA7D9296E75690089CB1B /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 		7F4515732919D99E0055EAA5 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanViewModel.swift; sourceTree = "<group>"; };
 		7F502941296CFAEC00FF33A3 /* FaceScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanButton.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				7F9BB9D428FFC7C9000E6C87 /* EyebrowMenuBar.swift */,
 				7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */,
+				7F3DA7D9296E75690089CB1B /* ColorButton.swift */,
 			);
 			path = Eyebrow;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */,
 				7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */,
 				7F9BB9CE28FFC6D7000E6C87 /* FaceContourLine.swift in Sources */,
+				7F3DA7DA296E75690089CB1B /* ColorButton.swift in Sources */,
 				7FC74E822942C9E900A44AC0 /* SCNVector3+.swift in Sources */,
 				7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */,
 				7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */,

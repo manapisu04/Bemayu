@@ -34,7 +34,9 @@ struct EyebrowMenuBar: View {
                             }
                             
                             Spacer()
-                            
+                            ColorButton(selectedColor: $viewModel.lineColor, circleColor: .black)
+                            ColorButton(selectedColor: $viewModel.lineColor, circleColor: .green)
+                            Spacer()
                         }
                         
                         // 眉毛ボタン

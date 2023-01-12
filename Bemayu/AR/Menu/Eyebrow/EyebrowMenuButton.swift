@@ -9,12 +9,12 @@ import SwiftUI
 
 // 眉の写真とイメージネーム
 struct EyebrowMenuButton: View {
-    let eyebrow: Eyebrow
+    let eyebrow: EyebrowImage
     let labelColor: Color
     
     @ObservedObject var viewModel: EyebrowSupportViewModel
     
-    init(eyebrow: Eyebrow, viewModel: EyebrowSupportViewModel) {
+    init(eyebrow: EyebrowImage, viewModel: EyebrowSupportViewModel) {
         self.eyebrow = eyebrow
         self.viewModel = viewModel
         switch(eyebrow.type) {
@@ -48,7 +48,7 @@ struct EyebrowMenuButton: View {
         .gesture(
             TapGesture()
                 .onEnded { _ in
-                    viewModel.changeImage(left: eyebrow.leftImage, right: eyebrow.rightImage)
+                    viewModel.tappedImage(eyebrowImage: eyebrow)
                     viewModel.tappedImage = true
                 }
         )

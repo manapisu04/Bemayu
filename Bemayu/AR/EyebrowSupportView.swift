@@ -64,13 +64,16 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         node.geometry?.firstMaterial?.diffuse.contents = UIColor.clear
         
         // ここで画像を登録してる
-        for image in Images.shared.eyebrows {
+        for image in EyebrowImage.allCases {
             // 黒
-            node.addChildNode(makeImageNode(name: image.leftImage + "_b"))
-            node.addChildNode(makeImageNode(name: image.rightImage + "_b"))
+            node.addChildNode(makeImageNode(name: image.image + "_l_b"))
+            node.addChildNode(makeImageNode(name: image.image + "_r_b"))
             // 緑
-            node.addChildNode(makeImageNode(name: image.leftImage + "_g"))
-            node.addChildNode(makeImageNode(name: image.rightImage + "_g"))
+            node.addChildNode(makeImageNode(name: image.image + "_l_g"))
+            node.addChildNode(makeImageNode(name: image.image + "_r_g"))
+            // 赤
+            node.addChildNode(makeImageNode(name: image.image + "_l_r"))
+            node.addChildNode(makeImageNode(name: image.image + "_r_r"))
         }
         
         print(node.childNodes.count)
@@ -104,7 +107,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         if let leftEyebrowChild = node.childNode(withName: viewModel.newImages.left, recursively: false),
            let rightEyebrowChild = node.childNode(withName: viewModel.newImages.right, recursively: false) {
-            print("ぽけけ")
+//            print("ぽけけ")
             // 眉毛の位置にする
             leftEyebrowChild.position = viewModel.leftEyebrowPosition ?? SCNVector3(0, 0, 0)
             rightEyebrowChild.position = viewModel.rigftEyebrowPosition ?? SCNVector3(0, 0, 0)
@@ -133,6 +136,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     func selectedImage(node: SCNNode) {
         guard let viewModel else { return }
+        print("=========================")
+        print(viewModel.oldImages.left)
+        print(viewModel.newImages.left)
+        print("=========================")
+        
         if let oldLeftEyebrowNode = node.childNode(withName: viewModel.oldImages.left, recursively: false),
            let oldRightEyebrowNode = node.childNode(withName: viewModel.oldImages.right, recursively: false),
            let newLeftEyebrowNode = node.childNode(withName: viewModel.newImages.left, recursively: false),

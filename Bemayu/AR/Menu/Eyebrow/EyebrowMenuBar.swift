@@ -20,28 +20,29 @@ struct EyebrowMenuBar: View {
                         .foregroundColor(Color("barColor"))
                     VStack {
                         // 閉じるボタン
-                        HStack {
-                            Button {
-                                withAnimation {
-                                    self.isShowEyebrowMenu = false
+                        ZStack {
+                            HStack {
+                                Button {
+                                    withAnimation {
+                                        self.isShowEyebrowMenu = false
+                                    }
+                                    
+                                } label: {
+                                    Image(systemName: "chevron.down")
+                                        .renderingMode(.template)
+                                        .foregroundColor(.white)
+                                        .padding(13.0)
                                 }
                                 
-                            } label: {
-                                Image(systemName: "chevron.down")
-                                    .renderingMode(.template)
-                                    .foregroundColor(.white)
-                                    .padding(13.0)
+                                Spacer()
                             }
                             
-                            Spacer()
-                            ColorButton(selectedColor: $viewModel.lineColor, circleColor: .black)
-                            ColorButton(selectedColor: $viewModel.lineColor, circleColor: .green)
-                            Spacer()
+                            ColorButtons(viewModel: viewModel, selectedColor: $viewModel.lineColor)
                         }
                         
                         // 眉毛ボタン
                         HStack {
-                            ForEach(Images.shared.eyebrows) { eyebrowData in
+                            ForEach(EyebrowImage.allCases) { eyebrowData in
                                 EyebrowMenuButton(eyebrow: eyebrowData, viewModel: viewModel)
                             }
                         }

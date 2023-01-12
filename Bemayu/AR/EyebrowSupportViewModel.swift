@@ -13,12 +13,27 @@ class EyebrowSupportViewModel: ObservableObject {
     @Published var oldImages = (left: "arch_l_b", right: "arch_r_b")
     @Published var newImages = (left: "arch_l_b", right: "arch_r_b")
     @Published var tappedImage: Bool = false
-    @Published var lineColor: LineColor = .black
+    var lineColor: LineColor = .black {
+        willSet {
+            let leftImage = eyebrowImage + "_l" + newValue.rawValue
+            let rightImage = eyebrowImage + "_r" + newValue.rawValue
+            self.newImages = (left: leftImage, right: rightImage)
+        }
+    }
     
     var leftEyebrowPosition: SCNVector3?
     var rigftEyebrowPosition: SCNVector3?
     
     let facePartsService = FacePartsService.shared
+    
+    var eyebrowImage = "arch" {
+        willSet {
+            let leftImage = newValue + "_l" + self.lineColor.rawValue
+            let rightImage = newValue + "_r" + self.lineColor.rawValue
+            self.newImages = (left: leftImage, right: rightImage)
+        }
+    }
+    
     
     func setEyebrowPosition() {
         if let leftEyebrowData = load(key: leftEyebrow),
@@ -36,45 +51,88 @@ class EyebrowSupportViewModel: ObservableObject {
         }
     }
     
-    func tappedButton(name: String) {
-        // 処理
+    func tappedColorButton() {
+        changeImage(left: self.newImages.left, right: self.newImages.right)
     }
     
     func changeImage(left: String, right: String) {
-        let leftImageName = left + lineColor.rawValue
-        let rightImageName = right + lineColor.rawValue
-        self.newImages = (left: leftImageName, right: rightImageName)
+        //        let leftImageName = left + lineColor.rawValue
+        //        let rightImageName = right + lineColor.rawValue
+        self.newImages = (left: left, right: right)
         //TODO: 永続化の処理
     }
-}
-
-struct Eyebrow: Identifiable {
-    let id = UUID()
-    let tag: String
-    let buttonImage: String
-    let type: Impression
-    let leftImage: String
-    let rightImage: String
-}
-
-struct Images {
-    static let shared: Images = .init()
-    let eyebrows: [Eyebrow]
     
-    private init() {
-        var eyebrowsArray: [Eyebrow] = []
-        eyebrowsArray.append(.init(tag: "きりっと", buttonImage: "cool1", type: .cool, leftImage: "chokusen_l", rightImage: "chokusen_r"))
-        eyebrowsArray.append(.init(tag: "かわいい", buttonImage: "cute_h", type: .cute, leftImage: "heikoumayu_l", rightImage: "heikoumayu_r"))
-        eyebrowsArray.append(.init(tag: "ナチュラル", buttonImage: "natural1", type: .natural, leftImage: "arch_l", rightImage: "arch_r"))
-        eyebrowsArray.append(.init(tag: "かっこいい", buttonImage: "cool1", type: .cool, leftImage: "sharp_l", rightImage: "sharp_r"))
+    func tappedImage(eyebrowImage: EyebrowImage) {
+        self.eyebrowImage = eyebrowImage.image
         
-        self.eyebrows = eyebrowsArray
     }
 }
 
-enum LineColor: String {
+
+enum EyebrowImage: CaseIterable, Identifiable {
+    var id: String { image }
+    
+    case chokusen
+    case heikoumayu
+    case arch
+    case sharp
+    
+    var type: Impression {
+        switch self {
+        case .chokusen, .sharp:
+            return .cool
+        case .heikoumayu:
+            return .cute
+        case .arch:
+            return .natural
+        }
+    }
+    
+    var tag: String {
+        switch self {
+        case .chokusen:
+            return "きりっと"
+        case .heikoumayu:
+            return "かわいい"
+        case .arch:
+            return "ナチュラル"
+        case .sharp:
+            return "かっこいい"
+        }
+    }
+    
+    var buttonImage: String {
+        switch self {
+        case .chokusen, .sharp:
+            return "cool1"
+        case .heikoumayu:
+            return "cute_h"
+        case .arch:
+            return "natural1"
+        }
+    }
+    
+    
+    var image: String {
+        switch self {
+        case .chokusen:
+            return "chokusen"
+        case .heikoumayu:
+            return "heikoumayu"
+        case .arch:
+            return "arch"
+        case .sharp:
+            return "sharp"
+        }
+    }
+}
+
+enum LineColor: String, CaseIterable, Identifiable {
+    var id: String { rawValue }
+    
     case black = "_b"
     case green = "_g"
+    case red = "_r"
     
     func color() -> Color {
         switch self {
@@ -82,6 +140,8 @@ enum LineColor: String {
             return .black
         case .green:
             return .green
+        case .red:
+            return .red
         }
     }
 }

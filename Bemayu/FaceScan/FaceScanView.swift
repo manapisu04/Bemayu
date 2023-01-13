@@ -15,16 +15,20 @@ struct FaceScanView: View {
     @StateObject var viewModel = FaceScanViewModel()
     var body: some View {
         ZStack {
-            
-            FaceTracking(viewModel: viewModel)
+            ARFaceScan(viewModel: viewModel)
             DescriptionView(shouldScanningFace: $shouldScanningFace, viewModel: viewModel)
             FaceContourLine()
         }
         .alert(Text("計測が完了しました！"), isPresented: $viewModel.showAlert) {
             Button {
-                viewModel.saveDistance()
-                //FIXME: うぃずあにめーしょん！
-                shouldScanningFace = false
+                // FIXME: 初回起動ならオフにする
+                if LaunchUtil.launchedVersion == "" {
+                    LaunchUtil.launchedVersion = "Initial setup complete"
+                    ContentViewModel.shared.switchStatus()
+                }
+                withAnimation(.linear) {
+                    shouldScanningFace = false
+                }
             } label: {
                 Text("OK")
             }

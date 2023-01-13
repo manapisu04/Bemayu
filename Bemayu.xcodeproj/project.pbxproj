@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F11D48B2930538C00506B97 /* EyebrowSupportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11D48A2930538C00506B97 /* EyebrowSupportViewModel.swift */; };
 		7F1CA6862918C69400B545E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6852918C69400B545E9 /* TestView.swift */; };
 		7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1CA6882918D52500B545E9 /* MakeupView.swift */; };
 		7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3CFCD72923156E00635A9F /* FaceTracking.swift */; };
+		7F3DA7DA296E75690089CB1B /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DA7D9296E75690089CB1B /* ColorButton.swift */; };
 		7F4515742919D99E0055EAA5 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515732919D99E0055EAA5 /* Description.swift */; };
 		7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */; };
+		7F502942296CFAED00FF33A3 /* FaceScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F502941296CFAEC00FF33A3 /* FaceScanButton.swift */; };
 		7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B092D291BADD4003FB962 /* Calculation.swift */; };
 		7F6ED82F292C54BE00609FD4 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6ED82E292C54BE00609FD4 /* Double+.swift */; };
 		7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */; };
@@ -26,14 +29,21 @@
 		7F9BB9D828FFC7E4000E6C87 /* EyebrowMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */; };
 		7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */; };
 		7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */; };
+		7FBA26C7294C03490014B2DB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA26C6294C03490014B2DB /* MainView.swift */; };
+		7FBA26C9294C08080014B2DB /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBA26C8294C08080014B2DB /* FirstView.swift */; };
+		7FC74E802942BDF400A44AC0 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC74E7F2942BDF400A44AC0 /* Properties.swift */; };
+		7FC74E822942C9E900A44AC0 /* SCNVector3+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC74E812942C9E900A44AC0 /* SCNVector3+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F11D48A2930538C00506B97 /* EyebrowSupportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyebrowSupportViewModel.swift; sourceTree = "<group>"; };
 		7F1CA6852918C69400B545E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		7F1CA6882918D52500B545E9 /* MakeupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeupView.swift; sourceTree = "<group>"; };
 		7F3CFCD72923156E00635A9F /* FaceTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTracking.swift; sourceTree = "<group>"; };
+		7F3DA7D9296E75690089CB1B /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 		7F4515732919D99E0055EAA5 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		7F4515752919E5D50055EAA5 /* FaceScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanViewModel.swift; sourceTree = "<group>"; };
+		7F502941296CFAEC00FF33A3 /* FaceScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceScanButton.swift; sourceTree = "<group>"; };
 		7F6B092D291BADD4003FB962 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		7F6ED82E292C54BE00609FD4 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		7F9BB9B828FFC58D000E6C87 /* Bemayu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bemayu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +59,10 @@
 		7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyebrowMenuButton.swift; sourceTree = "<group>"; };
 		7F9BB9DA28FFC84D000E6C87 /* MainMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuBar.swift; sourceTree = "<group>"; };
 		7FA69F1729022DEC0091DBCB /* MainMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuButton.swift; sourceTree = "<group>"; };
+		7FBA26C6294C03490014B2DB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7FBA26C8294C08080014B2DB /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		7FC74E7F2942BDF400A44AC0 /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		7FC74E812942C9E900A44AC0 /* SCNVector3+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +113,8 @@
 			children = (
 				7F9BB9BB28FFC58D000E6C87 /* BemayuApp.swift */,
 				7F9BB9BD28FFC58D000E6C87 /* ContentView.swift */,
+				7FBA26C8294C08080014B2DB /* FirstView.swift */,
+				7FBA26C6294C03490014B2DB /* MainView.swift */,
 				7F1CA6852918C69400B545E9 /* TestView.swift */,
 				7F1CA6872918D50B00B545E9 /* Makeup */,
 				7F9BB9CA28FFC5FB000E6C87 /* FaceScan */,
@@ -122,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				7F9BB9CF28FFC736000E6C87 /* EyebrowSupportView.swift */,
+				7F11D48A2930538C00506B97 /* EyebrowSupportViewModel.swift */,
 				7F9BB9D628FFC7CD000E6C87 /* Menu */,
 			);
 			path = AR;
@@ -130,6 +147,7 @@
 		7F9BB9CA28FFC5FB000E6C87 /* FaceScan */ = {
 			isa = PBXGroup;
 			children = (
+				7F502941296CFAEC00FF33A3 /* FaceScanButton.swift */,
 				7F9BB9CB28FFC66A000E6C87 /* FaceScanView.swift */,
 				7F9BB9CD28FFC6D7000E6C87 /* FaceContourLine.swift */,
 				7F4515732919D99E0055EAA5 /* Description.swift */,
@@ -145,6 +163,8 @@
 				7F9BB9D228FFC773000E6C87 /* FacePartsService.swift */,
 				7F6B092D291BADD4003FB962 /* Calculation.swift */,
 				7F6ED82E292C54BE00609FD4 /* Double+.swift */,
+				7FC74E7F2942BDF400A44AC0 /* Properties.swift */,
+				7FC74E812942C9E900A44AC0 /* SCNVector3+.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +184,7 @@
 			children = (
 				7F9BB9D428FFC7C9000E6C87 /* EyebrowMenuBar.swift */,
 				7F9BB9D728FFC7E4000E6C87 /* EyebrowMenuButton.swift */,
+				7F3DA7D9296E75690089CB1B /* ColorButton.swift */,
 			);
 			path = Eyebrow;
 			sourceTree = "<group>";
@@ -239,22 +260,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F9BB9D828FFC7E4000E6C87 /* EyebrowMenuButton.swift in Sources */,
+				7FBA26C7294C03490014B2DB /* MainView.swift in Sources */,
 				7FA69F1829022DED0091DBCB /* MainMenuButton.swift in Sources */,
 				7F4515742919D99E0055EAA5 /* Description.swift in Sources */,
 				7F1CA6862918C69400B545E9 /* TestView.swift in Sources */,
+				7FC74E802942BDF400A44AC0 /* Properties.swift in Sources */,
 				7F4515762919E5D50055EAA5 /* FaceScanViewModel.swift in Sources */,
 				7F9BB9D328FFC773000E6C87 /* FacePartsService.swift in Sources */,
 				7F9BB9D528FFC7C9000E6C87 /* EyebrowMenuBar.swift in Sources */,
+				7FBA26C9294C08080014B2DB /* FirstView.swift in Sources */,
 				7F6ED82F292C54BE00609FD4 /* Double+.swift in Sources */,
 				7F1CA6892918D52500B545E9 /* MakeupView.swift in Sources */,
 				7F9BB9CC28FFC66A000E6C87 /* FaceScanView.swift in Sources */,
 				7F3CFCD82923156E00635A9F /* FaceTracking.swift in Sources */,
 				7F9BB9CE28FFC6D7000E6C87 /* FaceContourLine.swift in Sources */,
+				7F3DA7DA296E75690089CB1B /* ColorButton.swift in Sources */,
+				7FC74E822942C9E900A44AC0 /* SCNVector3+.swift in Sources */,
 				7F6B092E291BADD4003FB962 /* Calculation.swift in Sources */,
 				7F9BB9DB28FFC84D000E6C87 /* MainMenuBar.swift in Sources */,
 				7F9BB9D028FFC736000E6C87 /* EyebrowSupportView.swift in Sources */,
+				7F502942296CFAED00FF33A3 /* FaceScanButton.swift in Sources */,
 				7F9BB9BE28FFC58D000E6C87 /* ContentView.swift in Sources */,
 				7F9BB9BC28FFC58D000E6C87 /* BemayuApp.swift in Sources */,
+				7F11D48B2930538C00506B97 /* EyebrowSupportViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +419,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,8 +453,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

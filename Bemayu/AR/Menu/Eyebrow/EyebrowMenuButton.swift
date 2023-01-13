@@ -9,14 +9,15 @@ import SwiftUI
 
 // 眉の写真とイメージネーム
 struct EyebrowMenuButton: View {
-    let impression: Impression
-    let title: String
+    let eyebrow: EyebrowImage
     let labelColor: Color
     
-    init(impression: Impression, title: String) {
-        self.impression = impression
-        self.title = title
-        switch(impression) {
+    @ObservedObject var viewModel: EyebrowSupportViewModel
+    
+    init(eyebrow: EyebrowImage, viewModel: EyebrowSupportViewModel) {
+        self.eyebrow = eyebrow
+        self.viewModel = viewModel
+        switch(eyebrow.type) {
         case .cute:
             self.labelColor = SwiftUI.Color("cuteColor")
         case .cool:
@@ -28,7 +29,7 @@ struct EyebrowMenuButton: View {
     
     var body: some View {
         VStack {
-            Image(title)
+            Image(eyebrow.buttonImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 80.0)
@@ -38,20 +39,27 @@ struct EyebrowMenuButton: View {
                     .foregroundColor(labelColor)
                     .frame(width: 80.0, height: 30.0)
                 
-                Text(title)
+                Text(eyebrow.tag)
                     .foregroundColor(.white)
             }
         }
         .background(Color.white)
         .cornerRadius(4.0)
+        .gesture(
+            TapGesture()
+                .onEnded { _ in
+                    viewModel.tappedImage(eyebrowImage: eyebrow)
+                    viewModel.tappedImage = true
+                }
+        )
     }
 }
 
-struct EyebrowMenuButton_Previews: PreviewProvider {
-    static var previews: some View {
-        EyebrowMenuButton(impression: .cute, title: "cute_h")
-    }
-}
+//struct EyebrowMenuButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EyebrowMenuButton(impression: .cute, title: "cute_h")
+//    }
+//}
 
 enum Impression {
     case cute

@@ -20,13 +20,12 @@ struct MainMenuBar: View {
                 ZStack {
                     Rectangle()
                         .foregroundColor(Color("barColor"))
-                        .frame(width: .infinity)
+                        .frame(maxWidth: .infinity)
                         .frame(height: 100.0)
                     
                     HStack {
                         Button {
-                            // FIXME: 眉の画面に遷移
-                            withAnimation {
+                            withAnimation(.linear) {
                                 self.shouldScanningFace = true
                             }
                         } label: {

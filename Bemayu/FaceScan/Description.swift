@@ -11,6 +11,9 @@ import SwiftUI
 struct DescriptionView: View {
     @Binding var shouldScanningFace: Bool
     @ObservedObject var viewModel: FaceScanViewModel
+    // FIXME: これいや
+    let height = UIScreen.main.bounds.height
+    
     var body: some View {
         VStack {
             ZStack {
@@ -28,28 +31,41 @@ struct DescriptionView: View {
                         }
                     }
                     .padding(20.0)
-                    Text("フレームにお顔がおさまるように\n写真を撮ってください。")
-                        .foregroundColor(.white)
+                    if viewModel.showErrorAlert {
+                            errorMessage
+                        } else {
+                            description
+                        }
                 }
             }
-            .frame(width: .infinity, height: 150.0)
+            .frame(maxWidth: .infinity)
+            .frame(height: height / 5.5)
             Spacer()
             ZStack {
                 Rectangle()
                     .foregroundColor(Color("barColor"))
                 Button {
-                    // TODO: shouldをfalseにして、眉と目の距離を端末に保存する処理
                     viewModel.tappedButton()
                 } label: {
-                    Image(systemName: "button.programmable")
-                        .renderingMode(.template)
+                    FaceScanButton()
                         .foregroundColor(.white)
-                        .font(.system(size: 70.0))
+                        .font(.system(size: height / 12))
                 }
             }
-            .frame(width: .infinity, height: 120.0)
+            .frame(maxWidth: .infinity)
+            .frame(height: height / 8)
         }
         .edgesIgnoringSafeArea(.all)
+    }
+    
+    var description: some View {
+        Text("フレームにお顔がおさまるように\n写真を撮ってください。")
+            .foregroundColor(.white)
+    }
+    
+    var errorMessage: some View {
+        Text("計測に失敗しました…\nもう一度お試しください。")
+            .foregroundColor(.red)
     }
 }
 

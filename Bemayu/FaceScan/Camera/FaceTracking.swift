@@ -83,7 +83,6 @@ class ARFaceScanViewController: UIViewController, ARSCNViewDelegate {
         }
         
         for x in 0..<1220 {
-            // 上で決めたネーム
             let child = node.childNode(withName: "\(x)", recursively: false)
             if let child {
                 child.position = SCNVector3(faceAnchor.geometry.vertices[x])
@@ -144,7 +143,6 @@ class ARFaceScanViewController: UIViewController, ARSCNViewDelegate {
         
         // ARSCNView、ARFaceAnchorを取得
         guard let sceneView = renderer as? ARSCNView, anchor is ARFaceAnchor else {
-            // TODO: 現在握り潰し
             return nil
         }
         
@@ -156,7 +154,7 @@ class ARFaceScanViewController: UIViewController, ARSCNViewDelegate {
         for x in [1076, 1070, 1163, 1168, 1094, 358, 1108, 1102, 20, 661, 888, 822, 1047, 462, 376, 39, 1013] {
             let sphere = SCNSphere(radius: 0.001)
             let sphereNode = SCNNode(geometry: sphere)
-            sphere.firstMaterial?.diffuse.contents = UIColor.white
+            sphere.firstMaterial?.diffuse.contents = UIColor.clear
             sphereNode.name = "\(x)"
             node.addChildNode(sphereNode)
             sphereNode.geometry?.firstMaterial?.fillMode = .fill

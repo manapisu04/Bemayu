@@ -10,22 +10,9 @@ import SwiftUI
 // 眉の写真とイメージネーム
 struct EyebrowMenuButton: View {
     let eyebrow: EyebrowImage
-    let labelColor: Color
     
     @ObservedObject var viewModel: EyebrowSupportViewModel
-    
-    init(eyebrow: EyebrowImage, viewModel: EyebrowSupportViewModel) {
-        self.eyebrow = eyebrow
-        self.viewModel = viewModel
-        switch(eyebrow.type) {
-        case .cute:
-            self.labelColor = SwiftUI.Color("cuteColor")
-        case .cool:
-            self.labelColor = SwiftUI.Color("coolColor")
-        case .natural:
-            self.labelColor = SwiftUI.Color("naturalColor")
-        }
-    }
+//    @Binding var selectedType: EyebrowImage
     
     var body: some View {
         VStack {
@@ -36,7 +23,7 @@ struct EyebrowMenuButton: View {
     
             ZStack {
                 Rectangle()
-                    .foregroundColor(labelColor)
+                    .foregroundColor(eyebrow.type.color)
                     .frame(width: 80.0, height: 30.0)
                 
                 Text(eyebrow.tag)
@@ -45,11 +32,27 @@ struct EyebrowMenuButton: View {
         }
         .background(Color.white)
         .cornerRadius(4.0)
+        .overlay(
+            ZStack {
+                if viewModel.hasTapped, eyebrow.image == viewModel.eyebrowImage {
+                    Color.gray
+                        .opacity(0.7)
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20)
+                        .bold()
+                        .foregroundColor(.white)
+                } 
+            }
+            
+        )
         .gesture(
             TapGesture()
                 .onEnded { _ in
                     viewModel.tappedImage(eyebrowImage: eyebrow)
                     viewModel.tappedImage = true
+                    viewModel.hasTapped = true
                 }
         )
     }
@@ -65,4 +68,15 @@ enum Impression {
     case cute
     case cool
     case natural
+    
+    var color: Color {
+        switch self {
+        case .cute:
+            return SwiftUI.Color("cuteColor")
+        case .cool:
+            return SwiftUI.Color("coolColor")
+        case .natural:
+            return SwiftUI.Color("naturalColor")
+        }
+    }
 }

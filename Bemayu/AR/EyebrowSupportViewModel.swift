@@ -9,11 +9,13 @@ import SwiftUI
 import ARKit
 
 class EyebrowSupportViewModel: ObservableObject {
-    //FIXME: ここも永続化できると良い
-    @Published var oldImages = (left: "arch_l_b", right: "arch_r_b")
-    @Published var newImages = (left: "arch_l_b", right: "arch_r_b")
+    // 初期値はダミー
+    @Published var oldImages = (left: "chokusen_l_b", right: "chokusen_r_b")
+    @Published var newImages = (left: "chokusen_l_r", right: "chokusen_r_r")
     @Published var tappedImage: Bool = false
-    var lineColor: LineColor = .black {
+    @Published var hasTapped: Bool = false
+    
+    var lineColor: LineColor = .red {
         willSet {
             let leftImage = eyebrowImage + "_l" + newValue.rawValue
             let rightImage = eyebrowImage + "_r" + newValue.rawValue
@@ -26,7 +28,7 @@ class EyebrowSupportViewModel: ObservableObject {
     
     let facePartsService = FacePartsService.shared
     
-    var eyebrowImage = "arch" {
+    var eyebrowImage = "chokusen" {
         willSet {
             let leftImage = newValue + "_l" + self.lineColor.rawValue
             let rightImage = newValue + "_r" + self.lineColor.rawValue

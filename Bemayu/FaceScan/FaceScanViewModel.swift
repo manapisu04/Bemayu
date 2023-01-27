@@ -61,33 +61,30 @@ class FaceScanViewModel: ObservableObject {
             return
         }
         
-        let calcu = CalculationDistance()
+        let calculation = CalculationDistance()
         
         // ARでの両目の距離
-        let eyesDistanceByAR = calcu.distanceMeasurement(startPosition: leftEyeInnerPosition, endPosition: rightEyeInnerPosition)
+        let eyesDistanceByAR = calculation.distanceMeasurement(startPosition: leftEyeInnerPosition, endPosition: rightEyeInnerPosition)
         
-        let leftEyebrowCenter = calcu.center(start: leftEyebrowPoints[2], end: leftEyebrowPoints[3])
-        let rightEyebrowCenter = calcu.center(start: rightEyebrowPoints[2], end: rightEyebrowPoints[3])
+        let leftEyebrowCenter = calculation.center(start: leftEyebrowPoints[2], end: leftEyebrowPoints[3])
+        let rightEyebrowCenter = calculation.center(start: rightEyebrowPoints[2], end: rightEyebrowPoints[3])
         
-        let leftDistance = calcu.pythagoreanTheorem(startPoint: leftEyePoints[3], endPoint: leftEyebrowCenter)
-        let rightDistance = calcu.pythagoreanTheorem(startPoint: rightEyePoints[3], endPoint: rightEyebrowCenter)
+        let leftDistance = calculation.pythagoreanTheorem(startPoint: leftEyePoints[3], endPoint: leftEyebrowCenter)
+        let rightDistance = calculation.pythagoreanTheorem(startPoint: rightEyePoints[3], endPoint: rightEyebrowCenter)
         
         // Visionでの両目の距離
-        let eyesDistanceByVision = calcu.pythagoreanTheorem(startPoint: leftEyePoints[3], endPoint: rightEyePoints[3])
+        let eyesDistanceByVision = calculation.pythagoreanTheorem(startPoint: leftEyePoints[3], endPoint: rightEyePoints[3])
         
         // 倍率
         let magnification = eyesDistanceByAR.multiplierFor(eyesDistanceByVision)
-        
-        
-        
-        let leftEyeCenter = calcu.center(start: leftEyeInnerPosition, end: leftEyeOuterPosition)
-        
-        let rightEyeCenter = calcu.center(start: rightEyeInnerPosition, end: rightEyeOuterPosition)
+                
+        let leftEyeCenter = calculation.center(start: leftEyeInnerPosition, end: leftEyeOuterPosition)
+        let rightEyeCenter = calculation.center(start: rightEyeInnerPosition, end: rightEyeOuterPosition)
         
         print("ぴけらった！")
-        let leftEyebrowPosition = calcu.convertingToSCNVector3(cgFloat: leftDistance, magnification: magnification, scnVector3: leftEyeCenter)
+        let leftEyebrowPosition = calculation.convertingToSCNVector3(cgFloat: leftDistance, magnification: magnification, scnVector3: leftEyeCenter)
         
-        let rightEyebrowPosition = calcu.convertingToSCNVector3(cgFloat: rightDistance, magnification: magnification, scnVector3: rightEyeCenter)
+        let rightEyebrowPosition = calculation.convertingToSCNVector3(cgFloat: rightDistance, magnification: magnification, scnVector3: rightEyeCenter)
         
         
         saveDistance(value: leftEyebrowPosition, key: leftEyebrow)

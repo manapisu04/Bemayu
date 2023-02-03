@@ -25,7 +25,7 @@ struct FaceContourLine: View {
         // iPhoneの場合の比率
         } else if device == .phone {
             self.widthRatio = 1.2
-            self.heightRatio = 1.8
+            self.heightRatio = 2.0
         }
     }
     

@@ -22,7 +22,6 @@ struct MakeupView: View {
                 .onAppear {
                     viewModel.setEyebrowPosition()
                 }
-//            EyebrowSupportView(viewModel: viewModel)
             VStack {
                 Spacer()
                 MainMenuBar(shouldScanningFace: $shouldScanningFace, isShowEyebrowMenu: $isShowEyebrowMenu)
